@@ -8,7 +8,7 @@ This project includes interactive lessons, examples, and exercises written in pu
 ## 📖 View the Textbook
 
 Visit the GitHub Pages version of the textbook here:  
-**[https://timmcdaniel-cc.github.io/Python-Book/](https://yourusername.github.io/python-textbook/)**  
+**[https://timmcdaniel-cc.github.io/Python-Book/](https://timmcdaniel-cc.github.io/Python-Book/)**  
 *(Replace with your actual GitHub Pages URL)*
 
 ## 📂 Project Structure
