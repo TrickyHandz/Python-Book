@@ -32,6 +32,24 @@
       background: white;
       margin: 1em 0;
     }
+    textarea {
+      width: 100%;
+      font-family: monospace;
+      font-size: 1em;
+      padding: 0.5em;
+      box-sizing: border-box;
+    }
+    button {
+      margin-top: 0.5em;
+      padding: 0.5em 1em;
+      font-size: 1em;
+    }
+    #output {
+      margin-top: 1em;
+      white-space: pre-wrap;
+      background: #f0f0f0;
+      padding: 1em;
+    }
   </style>
 </head>
 <body>
@@ -45,28 +63,37 @@
   <p>The simplest Python statement is the <code>print()</code> function. Try it below:</p>
 
   <div class="pyscript-container">
-    <py-script>
+    <textarea id="code" rows="5">
 print("Welcome to Lesson 1.1!")
 print("This message is printed using Python syntax.")
-    </py-script>
+    </textarea>
+    <button onclick="runCode()">Run Code</button>
+    <pre id="output"></pre>
   </div>
+
+  <py-script>
+from js import document
+
+def runCode():
+    code = document.getElementById("code").value
+    output = document.getElementById("output")
+    output.innerText = ""
+    try:
+        exec(code)
+    except Exception as e:
+        output.innerText = f"Error: {e}"
+  </py-script>
 
   <h2>Python is Indentation-Based</h2>
   <p>Python uses indentation (spaces or tabs) to define blocks of code instead of braces <code>{}</code> like other languages. For example:</p>
   <pre><code>def greet():
     print("Hello, CyberNet student!")</code></pre>
 
-  <h2>Try It Yourself</h2>
-  <p>Use the editable code box below to modify and run your own greeting:</p>
-  <div class="pyscript-container">
-    <py-repl auto-generate="true"></py-repl>
-  </div>
-
   <h2>Summary</h2>
   <ul>
     <li>Python uses indentation to define code blocks</li>
     <li>Statements like <code>print()</code> allow you to display output</li>
-    <li>You’ve just written and run Python directly in the browser!</li>
+    <li>You just ran Python code directly in your browser!</li>
   </ul>
 
 </body>
