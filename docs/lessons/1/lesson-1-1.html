@@ -73,7 +73,7 @@ print("This message is printed using Python syntax.")
 
 <py-script type="py">
 from js import document
-
+  
 def run_python_code(event):
     code = document.getElementById("code").value
     output = document.getElementById("output")
@@ -82,10 +82,10 @@ def run_python_code(event):
         exec(code, {"print": lambda *args: output.innerText += " ".join(map(str, args)) + "\n"})
     except Exception as e:
         output.innerText = f"Error: {e}"
-
+  
 document.getElementById("run-btn").addEventListener("click", run_python_code)
 </py-script>
-
+  
   <h2>Python is Indentation-Based</h2>
   <p>Python uses indentation (spaces or tabs) to define blocks of code instead of braces <code>{}</code> like other languages. For example:</p>
   <pre><code>def greet():
