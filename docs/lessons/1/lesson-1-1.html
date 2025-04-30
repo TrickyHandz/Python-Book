@@ -72,19 +72,19 @@ print("This message is printed using Python syntax.")
   </div>
 
   <py-script type="py">
-    from js import document
-    
-    def run_python_code(event):
-        code = document.getElementById("code").value
-        output = document.getElementById("output")
-        output.innerText = ""
-        try:
-            exec(code, {"print": lambda *args: output.innerText += " ".join(map(str, args)) + '\\n'})
-        except Exception as e:
-            output.innerText = f"Error: {e}"
-    
-    document.getElementById("run-btn").addEventListener("click", run_python_code)
-    </py-script>
+   from js import document
+   
+   def run_python_code(event):
+       code = document.getElementById("code").value
+       output = document.getElementById("output")
+       output.innerText = ""
+       try:
+           exec(code, {"print": lambda *args: output.innerText += " ".join(map(str, args)) + '\\n'})
+       except Exception as e:
+           output.innerText = f"Error: {e}"
+   
+   document.getElementById("run-btn").addEventListener("click", run_python_code)
+   </py-script>
     
   
   <h2>Python is Indentation-Based</h2>
