@@ -67,21 +67,24 @@
 print("Welcome to Lesson 1.1!")
 print("This message is printed using Python syntax.")
     </textarea>
-    <button onclick="runCode()">Run Code</button>
+    <button id="run-btn">Run Code</button>
     <pre id="output"></pre>
   </div>
 
   <py-script>
 from js import document
 
-def runCode():
+def run_python_code(event):
     code = document.getElementById("code").value
     output = document.getElementById("output")
     output.innerText = ""
     try:
-        exec(code)
+        exec(code, {"print": lambda *args: output.innerText += " ".join(map(str, args)) + "\n"})
     except Exception as e:
         output.innerText = f"Error: {e}"
+
+# Attach the handler to the button
+document.getElementById("run-btn").addEventListener("click", run_python_code)
   </py-script>
 
   <h2>Python is Indentation-Based</h2>
