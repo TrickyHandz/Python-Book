@@ -1,9 +1,8 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Lesson 1.1 – Introduction to Python Syntax (Brython)</title>
+  <title>Lesson 1.1 – Introduction to Python Syntax</title>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.11.0/brython.min.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.11.0/brython_stdlib.js"></script>
   <style>
@@ -12,8 +11,17 @@
       max-width: 800px;
       margin: auto;
       padding: 2em;
-      line-height: 1.6;
       background: #fdfdfd;
+    }
+    h1, h2 {
+      color: #2c3e50;
+    }
+    pre, code {
+      background: #f4f4f4;
+      padding: 0.5em;
+      display: block;
+      overflow-x: auto;
+      font-family: monospace;
     }
     textarea {
       width: 100%;
@@ -28,10 +36,12 @@
       font-size: 1em;
       margin-bottom: 1em;
     }
-    pre {
-      background: #f4f4f4;
+    .output-box {
+      background: #f0f0f0;
       padding: 1em;
       white-space: pre-wrap;
+      min-height: 60px;
+      border: 1px solid #ccc;
     }
   </style>
 </head>
@@ -39,17 +49,23 @@
 
   <h1>Lesson 1.1: Introduction to Python Syntax</h1>
 
-  <p>Try running the following Python code in your browser using Brython:</p>
+  <p>Python is known for having clean and readable syntax. This makes it an excellent first programming language. In this lesson, you'll learn the basic structure of Python code and how to write your first line of output using the <code>print()</code> function.</p>
+
+  <h2>What is Syntax?</h2>
+  <p><strong>Syntax</strong> refers to the structure and rules of a programming language. Just like grammar in English, syntax in Python tells the computer how to interpret what you've written. Python emphasizes simplicity and uses indentation to define structure.</p>
+
+  <h2>Printing Your First Message</h2>
+  <p>The most basic command in Python is <code>print()</code>, which displays text to the screen. Here's your first interactive coding exercise:</p>
 
   <textarea id="code-input">
-print("You can run python code right here.")
-print("No need to go back and forth from VSCode for simple stuff.")
+print("Welcome to Lesson 1.1!")
+print("This is Python running in your browser.")
   </textarea>
   <br>
   <button id="run-btn">Run Code</button>
 
   <h3>Output:</h3>
-  <pre id="output"></pre>
+  <div id="output" class="output-box"></div>
 
   <script type="text/python">
 from browser import document
@@ -76,6 +92,23 @@ def runCode(event):
 
 document["run-btn"].bind("click", runCode)
   </script>
+
+  <h2>Indentation Matters</h2>
+  <p>In many programming languages, code blocks are defined with curly braces <code>{}</code>. In Python, indentation is used instead:</p>
+  <pre><code>def greet():
+    print("Hello, CyberNet student!")</code></pre>
+
+  <p>If you remove or misalign the indentation, Python will give you an error.</p>
+
+  <h2>Key Concepts</h2>
+  <ul>
+    <li><strong>print()</strong> displays output</li>
+    <li>Strings must be in quotes (<code>"like this"</code>)</li>
+    <li>Indentation is required for defining blocks</li>
+  </ul>
+
+  <h2>Try it Yourself</h2>
+  <p>Modify the code above to print your own message. Don’t forget to include the quotation marks!</p>
 
 </body>
 </html>
