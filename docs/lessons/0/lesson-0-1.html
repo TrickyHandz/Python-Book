@@ -23,7 +23,7 @@
       overflow-x: auto;
       font-family: monospace;
     }
-    ul {
+    ul, ol {
       margin-top: 0;
     }
     kbd {
@@ -33,75 +33,77 @@
       padding: 0 4px;
       font-size: 0.9em;
     }
+    img {
+      max-width: 100%;
+      margin: 1em 0;
+      border: 1px solid #ccc;
+    }
   </style>
 </head>
 <body>
+
   <h1>Lesson 0.1: Setting Up Your Development Environment</h1>
+
   <p>Before we can start learning how to write Python code, we need the right tools. In this lesson, we’ll set up your development environment so you’re ready to run, test, and build Python programs confidently throughout the rest of the book.</p>
 
   <h2>What is a Development Environment?</h2>
   <p>A development environment is the collection of tools you use to write and run your code. This includes things like a code editor, a terminal, and the Python interpreter itself.</p>
-  <p>Think of it like your digital workbench—it should be organized, reliable, and ready for creative experimentation.</p>
 
   <h2>The Tools You’ll Be Using</h2>
 
   <h3>1. Python (Interpreter)</h3>
-  <p>Python is the language we’re learning. It’s an interpreted language, which means we’ll use the Python runtime to run our <code>.py</code> files.</p>
-  <p>You should already have Python installed on your machine. To verify, open your terminal and type:</p>
+  <p>Python is the language we’re learning. To check if it’s already installed, open your terminal and type:</p>
   <pre><code>python --version</code></pre>
-  <p>You should see something like:</p>
-  <pre><code>Python 3.11.6</code></pre>
+  <p>If you don’t see a version number, install Python using one of the methods below.</p>
 
   <h3>Installing Python</h3>
-  <p>If you don’t see a version number, Python may not be installed yet. Here’s how to install it:</p>
 
   <h4>Option 1: Microsoft Store (Windows)</h4>
-  <ol>
-    <li>If you open a <code>.py</code> file in VS Code and Python is missing, it will prompt you to install from the Microsoft Store.</li>
-    <li>Click the prompt, and install Python 3.x from the store.</li>
-    <li>After installation, restart VS Code.</li>
-    <li>Verify installation:</li>
-  </ol>
-  <pre><code>python --version</code></pre>
+  <p>When opening a <code>.py</code> file in VS Code, you might see this prompt if Python is missing:</p>
+  <img src="img/ms-store-prompt.png" alt="Microsoft Store Prompt">
 
-  <h4>Option 2: python.org (Windows, macOS, Linux)</h4>
-  <ol>
-    <li>Visit <a href="https://www.python.org/downloads/">python.org/downloads</a></li>
-    <li>Download the latest version for your OS.</li>
-    <li>Run the installer.</li>
-  </ol>
-  <p><strong>Important (Windows):</strong> Be sure to check "Add Python to PATH" before you click Install.</p>
-  <p>After installation:</p>
-  <pre><code>python --version</code></pre>
-  <p>or if that fails:</p>
-  <pre><code>python3 --version</code></pre>
+  <p>Click the prompt to open the Microsoft Store page for Python:</p>
+  <img src="img/ms-store-page.png" alt="Python Microsoft Store Listing">
+
+  <p>Click <strong>Get</strong> to install Python quickly and easily.</p>
+  <img src="img/ms-store-installing.png" alt="Installing Python from Microsoft Store">
+
+  <h4>Option 2: Install from python.org</h4>
+  <p>Visit <a href="https://www.python.org/downloads/">python.org/downloads</a> and download the installer for your operating system:</p>
+  <img src="img/python-org-download.png" alt="Python.org Download Page">
+
+  <p>Run the installer. Be sure to check <strong>Add Python to PATH</strong> before clicking <strong>Install Now</strong>:</p>
+  <img src="img/installer-path-checkbox.png" alt="Add Python to PATH option">
+
+  <p>You’ll see a progress screen like this:</p>
+  <img src="img/installation-progress.png" alt="Python Installation Progress">
+
+  <p>Finally, you’ll see a success message when installation is complete:</p>
+  <img src="img/setup-successful.png" alt="Python Setup Successful Screen">
 
   <h3>2. Visual Studio Code (Editor)</h3>
-  <p>VS Code is our code editor of choice. It’s lightweight, powerful, and highly customizable.</p>
   <ul>
-    <li>Download it from: <a href="https://code.visualstudio.com/">code.visualstudio.com</a></li>
-    <li>We’ll use it to write code, open terminals, and run scripts.</li>
+    <li>Download from: <a href="https://code.visualstudio.com/">code.visualstudio.com</a></li>
+    <li>Used for writing, editing, and running your Python scripts.</li>
   </ul>
 
   <h3>3. Python Extension for VS Code</h3>
   <ul>
-    <li>Open the Extensions view in VS Code (<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>X</kbd>)</li>
-    <li>Search for “Python” and install the extension by Microsoft</li>
+    <li>Press <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>X</kbd> in VS Code</li>
+    <li>Search for and install the "Python" extension by Microsoft</li>
   </ul>
 
   <h3>4. Terminal or Command Prompt</h3>
-  <p>The terminal is how you’ll run Python from the command line. In VS Code, press <kbd>Ctrl</kbd> + <kbd>`</kbd> to open the terminal.</p>
+  <p>Open your terminal in VS Code by pressing <kbd>Ctrl</kbd> + <kbd>`</kbd>.</p>
 
   <h2>Testing Your Setup</h2>
   <ol>
-    <li>Open VS Code</li>
-    <li>Create a new file: <code>hello.py</code></li>
+    <li>Create a new file called <code>hello.py</code></li>
     <li>Type:</li>
   </ol>
   <pre><code>print("Hello from CyberNet!")</code></pre>
-  <ol start="4">
-    <li>Save the file</li>
-    <li>Open the terminal and run:</li>
+  <ol start="3">
+    <li>Run the file using the terminal:</li>
   </ol>
   <pre><code>python hello.py</code></pre>
   <p>You should see:</p>
@@ -121,5 +123,6 @@
     <li>Use VS Code to write and run Python code</li>
     <li>Verify your setup by running a test program</li>
   </ul>
+
 </body>
 </html>
