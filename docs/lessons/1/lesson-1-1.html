@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lesson 1.1 – Introduction to Python Syntax</title>
+  <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+  <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 800px;
+      margin: auto;
+      padding: 2em;
+      line-height: 1.6;
+      background: #fdfdfd;
+    }
+    h1, h2, h3 {
+      color: #2c3e50;
+    }
+    code, pre {
+      background: #f4f4f4;
+      padding: 0.5em;
+      display: block;
+      overflow-x: auto;
+      font-family: monospace;
+    }
+    .pyscript-container {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 1em;
+      background: white;
+      margin: 1em 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Lesson 1.1: Introduction to Python Syntax</h1>
+
+  <h2>What is Syntax?</h2>
+  <p>In programming, <strong>syntax</strong> refers to the set of rules that define how you write code in a given language. Python syntax is designed to be clean and readable, making it a great first language for beginners.</p>
+
+  <h2>Example: Print a Message</h2>
+  <p>The simplest Python statement is the <code>print()</code> function. Try it below:</p>
+
+  <div class="pyscript-container">
+    <py-script>
+print("Welcome to Lesson 1.1!")
+print("This message is printed using Python syntax.")
+    </py-script>
+  </div>
+
+  <h2>Python is Indentation-Based</h2>
+  <p>Python uses indentation (spaces or tabs) to define blocks of code instead of braces <code>{}</code> like other languages. For example:</p>
+  <pre><code>def greet():
+    print("Hello, CyberNet student!")</code></pre>
+
+  <h2>Try It Yourself</h2>
+  <p>Use the editable code box below to modify and run your own greeting:</p>
+  <div class="pyscript-container">
+    <py-repl auto-generate="true"></py-repl>
+  </div>
+
+  <h2>Summary</h2>
+  <ul>
+    <li>Python uses indentation to define code blocks</li>
+    <li>Statements like <code>print()</code> allow you to display output</li>
+    <li>You’ve just written and run Python directly in the browser!</li>
+  </ul>
+
+</body>
+</html>
