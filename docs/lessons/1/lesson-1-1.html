@@ -3,9 +3,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Lesson 1.1 – Introduction to Python Syntax</title>
-  <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
-  <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+  <title>Lesson 1.1 – Introduction to Python Syntax (Brython)</title>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.11.0/brython.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.11.0/brython_stdlib.js"></script>
   <style>
     body {
       font-family: sans-serif;
@@ -15,89 +15,67 @@
       line-height: 1.6;
       background: #fdfdfd;
     }
-    h1, h2, h3 {
-      color: #2c3e50;
-    }
-    code, pre {
-      background: #f4f4f4;
-      padding: 0.5em;
-      display: block;
-      overflow-x: auto;
-      font-family: monospace;
-    }
-    .pyscript-container {
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      padding: 1em;
-      background: white;
-      margin: 1em 0;
-    }
     textarea {
       width: 100%;
+      height: 120px;
       font-family: monospace;
       font-size: 1em;
       padding: 0.5em;
-      box-sizing: border-box;
+      margin-bottom: 1em;
     }
     button {
-      margin-top: 0.5em;
       padding: 0.5em 1em;
       font-size: 1em;
+      margin-bottom: 1em;
     }
-    #output {
-      margin-top: 1em;
-      white-space: pre-wrap;
-      background: #f0f0f0;
+    pre {
+      background: #f4f4f4;
       padding: 1em;
+      white-space: pre-wrap;
     }
   </style>
 </head>
-<body>
+<body onload="brython()">
 
   <h1>Lesson 1.1: Introduction to Python Syntax</h1>
 
-  <h2>What is Syntax?</h2>
-  <p>In programming, <strong>syntax</strong> refers to the set of rules that define how you write code in a given language. Python syntax is designed to be clean and readable, making it a great first language for beginners.</p>
+  <p>Try running the following Python code in your browser using Brython:</p>
 
-  <h2>Example: Print a Message</h2>
-  <p>The simplest Python statement is the <code>print()</code> function. Try it below:</p>
+  <textarea id="code-input">
+print("You can run python code right here.")
+print("No need to go back and forth from VSCode for simple stuff.")
+  </textarea>
+  <br>
+  <button id="run-btn">Run Code</button>
 
-  <div class="pyscript-container">
-    <textarea id="code" rows="5">
-print("Welcome to Lesson 1.1!")
-print("This message is printed using Python syntax.")
-    </textarea>
-    <button id="run-btn">Run Code</button>
-    <pre id="output"></pre>
-  </div>
+  <h3>Output:</h3>
+  <pre id="output"></pre>
 
-  <py-script type="py">
-   from js import document
-   
-   def run_python_code(event):
-       code = document.getElementById("code").value
-       output = document.getElementById("output")
-       output.innerText = ""
-       try:
-           exec(code, {"print": lambda *args: output.innerText += " ".join(map(str, args)) + '\\n'})
-       except Exception as e:
-           output.innerText = f"Error: {e}"
-   
-   document.getElementById("run-btn").addEventListener("click", run_python_code)
-   </py-script>
-    
-  
-  <h2>Python is Indentation-Based</h2>
-  <p>Python uses indentation (spaces or tabs) to define blocks of code instead of braces <code>{}</code> like other languages. For example:</p>
-  <pre><code>def greet():
-    print("Hello, CyberNet student!")</code></pre>
+  <script type="text/python">
+from browser import document
+import sys
 
-  <h2>Summary</h2>
-  <ul>
-    <li>Python uses indentation to define code blocks</li>
-    <li>Statements like <code>print()</code> allow you to display output</li>
-    <li>You just ran Python code directly in your browser!</li>
-  </ul>
+class OutputCatcher:
+    def __init__(self):
+        self.output = document["output"]
+        self.output.text = ""
+
+    def write(self, data):
+        self.output.text += data
+
+    def flush(self):
+        pass
+
+def runCode(event):
+    code = document["code-input"].value
+    sys.stdout = sys.stderr = OutputCatcher()
+    try:
+        exec(code)
+    except Exception as e:
+        print(f"Error: {e}")
+
+document["run-btn"].bind("click", runCode)
+  </script>
 
 </body>
 </html>
