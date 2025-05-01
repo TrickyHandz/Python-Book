@@ -8,7 +8,7 @@ This project includes interactive lessons, examples, and exercises written in pu
 ## 📖 View the Textbook
 
 Visit the GitHub Pages version of the textbook here:  
-**[https://TrickyHandz.github.io/Python-Book/](trickyhandz.github.io/Python-Book/)**  
+**[https://trickyhandz.github.io/Python-Book/](Python Book)*  
 *(Replace with your actual GitHub Pages URL)*
 
 ## 📂 Project Structure
