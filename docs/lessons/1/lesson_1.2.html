@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lesson 1.2 – Variables and Data Types</title>
+  <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+  <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 800px;
+      margin: auto;
+      padding: 2em;
+      line-height: 1.6;
+      background: #fdfdfd;
+    }
+    pre {
+      background: #f4f4f4;
+      padding: 0.5em;
+      border-radius: 4px;
+      overflow-x: auto;
+    }
+    code {
+      font-family: monospace;
+    }
+    h2 {
+      border-bottom: 2px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <h1>Lesson 1.2 – Variables and Data Types</h1>
+
+  <h2>What is a Variable?</h2>
+  <p>A <strong>variable</strong> is like a label for a specific spot in your computer’s memory. You can store a value there, and later access it just by using its name.</p>
+  <blockquote>
+    <em>“Think of a variable like a street address. You don’t always say ‘1234 Maple Lane’—you say ‘my friend’s house’ or ‘the grocery store.’ The street address is fixed, but what matters is what it represents to you.”</em>
+  </blockquote>
+  <p>In the same way, when we use a variable in Python, we’re not thinking about where the data lives—we’re just using a name that makes sense in our code.</p>
+  <pre><code>student_name = "Alice"
+print(student_name)</code></pre>
+  <p>Here, <code>student_name</code> is the name we gave to a memory location where the string <code>"Alice"</code> is stored. We refer to it by name, not by the value directly. That name helps both us and Python access the data quickly and meaningfully.</p>
+
+  <h2>Variable Naming: Rules and Purpose</h2>
+  <p>Python has a few rules for naming variables:</p>
+  <ul>
+    <li>Must start with a letter or underscore</li>
+    <li>Can include letters, numbers, and underscores</li>
+    <li>Are case-sensitive</li>
+    <li>Can’t be a Python keyword (like <code>if</code>, <code>for</code>, <code>class</code>)</li>
+  </ul>
+  <p>But more importantly, variable names should make sense to <em>you</em>. Python doesn’t care if you name your variable <code>x</code> or <code>favorite_movie</code>, but your future self will appreciate good names.</p>
+  <pre><code># Bad
+x = "Tim"
+y = 14
+z = True
+
+# Better
+student_name = "Tim"
+student_age = 14
+has_permission = True</code></pre>
+
+  <h3>Naming Conventions</h3>
+  <ul>
+    <li><strong>snake_case</strong> – Preferred for Python variables: <code>user_name</code></li>
+    <li><strong>camelCase</strong> – Common in other languages: <code>userName</code></li>
+    <li><strong>PascalCase</strong> – Often used for class names: <code>UserProfile</code></li>
+  </ul>
+
+  <h2>Common Data Types</h2>
+
+  <h3>Integers (<code>int</code>)</h3>
+  <p>Integers are <strong>counting numbers</strong>—positive or negative whole numbers without decimal points.</p>
+  <pre><code>score = 10
+lives = -3
+apples = 0</code></pre>
+  <p>Integers are great when you’re working with quantities you can count. If you divide them, Python will promote the result to a float if needed.</p>
+
+  <h3>Floating Point Numbers (<code>float</code>)</h3>
+  <p>Floats are numbers that include a <strong>decimal point</strong>, even if the decimal part is zero.</p>
+  <pre><code>pi = 3.14
+price = 19.99
+score = 5.0</code></pre>
+  <p>Use floats when precision matters—like when you’re measuring instead of counting.</p>
+
+  <h4>Truncation Example</h4>
+  <pre><code>value = int(3.9)  # result: 3</code></pre>
+  <p>This <strong>truncates</strong> the decimal—it does not round up or down. Just chops it off!</p>
+
+  <h3>Boolean Values (<code>bool</code>)</h3>
+  <p>Booleans represent <strong>True</strong> or <strong>False</strong>—they’re like light switches that are either on or off.</p>
+  <pre><code>is_student = True
+has_paid = False</code></pre>
+  <p>They’ll become important when we start making decisions in our code using <code>if</code> statements and loops.</p>
+
+  <h3>Strings (<code>str</code>)</h3>
+  <p>A string is any text wrapped in quotes. It could be words, sentences, or even empty.</p>
+  <pre><code>greeting = "Hello"
+name = 'Alice'
+message = "It's a nice day!"</code></pre>
+  <p>You can use single or double quotes, but they must match. If you use one inside the string, escape it or switch quote styles.</p>
+  <pre><code>quote = "She said, 'Hi!'"
+escaped = 'It\'s sunny.'</code></pre>
+
+  <h2>Your Turn</h2>
+  <p>Try creating one variable for each type:</p>
+  <ul>
+    <li>Your name (string)</li>
+    <li>Your age (integer)</li>
+    <li>Your height (float)</li>
+    <li>Whether you like pizza (boolean)</li>
+  </ul>
+  <py-script>
+name = "Sasha"
+age = 15
+height = 5.5
+likes_pizza = True
+
+print("Name:", name)
+print("Age:", age)
+print("Height:", height)
+print("Likes pizza:", likes_pizza)
+  </py-script>
+</body>
+</html>
