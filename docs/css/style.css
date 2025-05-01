@@ -1,0 +1,47 @@
+
+body {
+  font-family: sans-serif;
+  max-width: 800px;
+  margin: auto;
+  padding: 2em;
+  line-height: 1.6;
+  background: #fafafa;
+}
+h1, h2 {
+  color: #333;
+}
+nav a {
+  display: block;
+  margin-bottom: 0.5em;
+  text-decoration: none;
+  color: #2c3e50;
+  font-weight: bold;
+}
+footer {
+  margin-top: 4em;
+  font-size: 0.9em;
+  color: #777;
+}
+pre {
+  background: #f4f4f4;
+  padding: 0.5em;
+  border-radius: 4px;
+  overflow-x: auto;
+}
+code {
+  font-family: monospace;
+}
+h2, h3 {
+  border-bottom: 2px solid #ccc;
+}
+textarea#code-input {
+  width: 100%;
+  font-family: monospace;
+  font-size: 1em;
+  padding: 0.5em;
+  margin-bottom: 1em;
+  line-height: 1.4em;
+  height: calc(1.4em * 10); /* 10 lines tall */
+  box-sizing: border-box;
+}
+
