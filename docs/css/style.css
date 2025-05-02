@@ -25,12 +25,21 @@ footer {
 pre {
   background: #f4f4f4;
   padding: 0.5em;
-  border-radius: 4px;
+  display: block;
   overflow-x: auto;
-}
-code {
   font-family: monospace;
+  border-radius: 4px;
+  margin-bottom: 1em;
 }
+
+code {
+  background: #f4f4f4;
+  padding: 0.2em 0.4em;
+  font-family: monospace;
+  border-radius: 4px;
+}
+
+
 h2, h3 {
   border-bottom: 2px solid #ccc;
 }

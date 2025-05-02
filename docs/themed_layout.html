@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Themed TOC Layout</title>
+  <style>
+    :root {
+      --bg-color: white;
+      --text-color: #222;
+      --toc-bg: #f4f4f4;
+      --toc-border: #ccc;
+      --link-color: #000;
+      --link-hover: #007acc;
+    }
+
+    [data-theme="dark"] {
+      --bg-color: #181818;
+      --text-color: #eee;
+      --toc-bg: #242424;
+      --toc-border: #444;
+      --link-color: #ccc;
+      --link-hover: white;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      line-height: 1.6;
+      display: flex;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    aside.toc {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 260px;
+      overflow-y: auto;
+      padding: 1rem;
+      background-color: var(--toc-bg);
+      border-right: 1px solid var(--toc-border);
+    }
+
+    aside.toc h2 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    aside.toc ul {
+      list-style: none;
+    }
+
+    aside.toc li {
+      margin: 0.5rem 0;
+    }
+
+    aside.toc a {
+      color: var(--link-color);
+      text-decoration: none;
+    }
+
+    aside.toc a:hover {
+      color: var(--link-hover);
+    }
+
+    main.content {
+      margin-left: 280px;
+      padding: 2rem;
+      max-width: 800px;
+      flex: 1;
+    }
+
+    .theme-toggle {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      z-index: 1000;
+      padding: 0.5rem 1rem;
+      background-color: var(--toc-bg);
+      color: var(--text-color);
+      border: 1px solid var(--toc-border);
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+  </style>
+</head>
+<body>
+  <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+
+  <aside class="toc">
+    <h2>Contents</h2>
+    <ul>
+      <li><a href="#intro">Introduction</a></li>
+      <li><a href="#setup">Setup</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#usage">Usage</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+  </aside>
+
+  <main class="content">
+    <h1 id="intro">Introduction</h1>
+    <p>This is a themed layout with a fixed table of contents and a manual toggle between light and dark mode.</p>
+
+    <h2 id="setup">Setup</h2>
+    <p>Describe how to set up the project here.</p>
+
+    <h2 id="features">Features</h2>
+    <p>List the features here.</p>
+
+    <h2 id="usage">Usage</h2>
+    <p>Give usage examples and walkthroughs.</p>
+
+    <h2 id="faq">FAQ</h2>
+    <p>Address common questions and troubleshooting.</p>
+  </main>
+
+  <script>
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const userTheme = localStorage.getItem("theme");
+
+    function applyTheme(theme) {
+      document.documentElement.setAttribute("data-theme", theme);
+      localStorage.setItem("theme", theme);
+    }
+
+    function toggleTheme() {
+      const current = document.documentElement.getAttribute("data-theme");
+      const next = current === "dark" ? "light" : "dark";
+      applyTheme(next);
+    }
+
+    if (userTheme) {
+      applyTheme(userTheme);
+    } else {
+      applyTheme(prefersDark ? "dark" : "light");
+    }
+  </script>
+</body>
+</html>

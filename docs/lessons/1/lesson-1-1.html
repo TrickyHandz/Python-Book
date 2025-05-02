@@ -1,104 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <title>Lesson 1.1 – Introduction to Python Syntax</title>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.11.0/brython.min.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.11.0/brython_stdlib.js"></script>
   <link rel="stylesheet" href="../../css/style.css">
-<!-- Removed inline styles -->
-<style type="text/removed">
-    body {
-      font-family: sans-serif;
-      max-width: 800px;
-      margin: auto;
-      padding: 2em;
-      background: #fdfdfd;
-    }
-    h1, h2 {
-      color: #2c3e50;
-    }
-    pre, code {
-      background: #f4f4f4;
-      padding: 0.5em;
-      display: block;
-      overflow-x: auto;
-      font-family: monospace;
-    }
-    textarea {
-      width: 100%;
-      height: 120px;
-      font-family: monospace;
-      font-size: 1em;
-      padding: 0.5em;
-      margin-bottom: 1em;
-    }
-    button {
-      padding: 0.5em 1em;
-      font-size: 1em;
-      margin-bottom: 1em;
-    }
-    .output-box {
-      background: #f0f0f0;
-      padding: 1em;
-      white-space: pre-wrap;
-      min-height: 60px;
-      border: 1px solid #ccc;
-    }
-  </style>
+  
 </head>
+
 <body onload="brython()">
 
   <h1>Lesson 1.1: Introduction to Python Syntax</h1>
 
-  <p>Python is known for having clean and readable syntax. This makes it an excellent first programming language. In this lesson, you'll learn the basic structure of Python code and how to write your first line of output using the <code>print()</code> function.</p>
+  <p>Python is known for having clean and readable syntax. This makes it an excellent first programming language. In
+    this lesson, you'll learn the basic structure of Python code and how to write your first line of output using the
+    <code>print()</code> function.</p>
 
   <h2>What is Syntax?</h2>
-  <p><strong>Syntax</strong> refers to the structure and rules of a programming language. Just like grammar in English, syntax in Python tells the computer how to interpret what you've written. Python emphasizes simplicity and uses indentation to define structure.</p>
-
-  <h2>Printing Your First Message</h2>
-  <p>The most basic command in Python is <code>print()</code>, which displays text to the screen. Here's your first interactive coding exercise:</p>
-
-  <textarea id="code-input">
-print("Welcome to Lesson 1.1!")
-print("This is Python running in your browser.")
-  </textarea>
-  <br>
-  <button id="run-btn">Run Code</button>
-
-  <h3>Output:</h3>
-  <div id="output" class="output-box"></div>
-
-  <script type="text/python">
-from browser import document
-import sys
-
-class OutputCatcher:
-    def __init__(self):
-        self.output = document["output"]
-        self.output.text = ""
-
-    def write(self, data):
-        self.output.text += data
-
-    def flush(self):
-        pass
-
-def runCode(event):
-    code = document["code-input"].value
-    sys.stdout = sys.stderr = OutputCatcher()
-    try:
-        exec(code)
-    except Exception as e:
-        print(f"Error: {e}")
-
-document["run-btn"].bind("click", runCode)
-  </script>
+  <p><strong>Syntax</strong> refers to the structure and rules of a programming language. Just like grammar in English,
+    syntax in Python tells the computer how to interpret what you've written. Python emphasizes simplicity and uses
+    indentation to define structure.</p>
 
   <h2>Indentation Matters</h2>
-  <p>In many programming languages, code blocks are defined with curly braces <code>{}</code>. In Python, indentation is used instead:</p>
+  <h2>Indentation and Whitespace in Python</h2>
+  <h2>Printing Your First Message</h2>
+  <p>Unlike many languages that use braces <code>{}</code> to define code blocks, Python uses
+    <strong>indentation</strong>. The amount of space at the beginning of a line is how Python knows what code belongs
+    to what block.</p>
+
+  <p>Python allows either <strong>spaces</strong> or <strong>tabs</strong> for indentation—but you should never mix them
+    in the same file. Doing so can lead to confusing errors.</p>
+
+  <pre><code>if True:
+    print("This line uses spaces")
+    print("This line uses a tab")  # This will cause an error in Python</code></pre>
+
+  <p>To avoid these kinds of errors, always use <strong>four spaces</strong> per indentation level. Most code editors
+    (including VS Code) will help you with this automatically.</p>
+
+  <p>In many programming languages, code blocks are defined with curly braces <code>{}</code>. In Python, indentation is
+    used instead:</p>
   <pre><code>def greet():
-    print("Hello, CyberNet student!")</code></pre>
+      print("Hello, CyberNet student!")</code></pre>
 
   <p>If you remove or misalign the indentation, Python will give you an error.</p>
 
@@ -108,9 +53,43 @@ document["run-btn"].bind("click", runCode)
     <li>Strings must be in quotes (<code>"like this"</code>)</li>
     <li>Indentation is required for defining blocks</li>
   </ul>
-
+  <p>The most basic command in Python is <code>print()</code>, which displays text to the screen. Here's your first
+    interactive coding exercise:</p>
   <h2>Try it Yourself</h2>
-  <p>Modify the code above to print your own message. Don’t forget to include the quotation marks!</p>
+  <textarea id="code-input">
+    print("Welcome to Lesson 1.1!")
+    print("This is Python running in your browser.")
+  </textarea>
+  <br>
+  <button id="run-btn">Run Code</button>
+  <h3>Output:</h3>
+  <div id="output" class="output-box"></div>
 
+  <script type="text/python">
+  from browser import document
+  import sys
+  
+  class OutputCatcher:
+      def __init__(self):
+          self.output = document["output"]
+          self.output.text = ""
+  
+      def write(self, data):
+          self.output.text += data
+  
+      def flush(self):
+          pass
+  
+  def runCode(event):
+      code = document["code-input"].value
+      sys.stdout = sys.stderr = OutputCatcher()
+      try:
+          exec(code)
+      except Exception as e:
+          print(f"Error: {e}")
+  
+  document["run-btn"].bind("click", runCode)
+    </script>
+  <p>Modify the code above to print your own message. Don’t forget to include the quotation marks!</p>
 </body>
 </html>
