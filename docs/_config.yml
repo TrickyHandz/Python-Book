@@ -5,3 +5,9 @@ defaults:
       type: "pages"
     values:
       layout: "default"
+
+collections:
+  lessons:
+    output: true
+    permalink: /lessons/:path/
+

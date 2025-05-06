@@ -1,23 +1,15 @@
 <aside class="sidebar">
   <h3>Chapters</h3>
-  <ul>
-    <li><strong>Section 0: Getting Started</strong>
-      <ul>
-        <li><a href="/lessons/0/0-0.md">0.0 – What is Python?</a></li>
-        <li><a href="/lessons/0/0-1.md">0.1 – History & Philosophy</a></li>
-        <li><a href="/lessons/0/0-2.md">0.2 – Interpreted vs. Compiled</a></li>
-      </ul>
-    </li>
-    <li><strong>Section 1: Python Fundamentals</strong>
-      <ul>
-        <li><a href="/lessons/1/1-0.md">1.0 – Fundamentals</a></li>
-        <li><a href="/lessons/1/1-1.md">1.1 – Python Syntax</a></li>
-        <li><a href="/lessons/1/1-2.md">1.2 – Variables & Data Types</a></li>
-        <li><a href="/lessons/1/1-2-1.md">1.2.1 – Integers</a></li>
-        <li><a href="/lessons/1/1-2-2.md">1.2.2 – Floats</a></li>
-        <li><a href="/lessons/1/1-2-3.md">1.2.3 – Booleans</a></li>
-        <li><a href="/lessons/1/1-2-4.md">1.2.4 – Strings</a></li>
-      </ul>
-    </li>
-  </ul>
+  {% assign sections = site.lessons | group_by: "section" %}
+  {% for section in sections %}
+    <h4>Section {{ section.name }}</h4>
+    <ul>
+      {% assign sorted_lessons = section.items | sort: "order" %}
+      {% for lesson in sorted_lessons %}
+        <li>
+          <a href="{{ lesson.url | relative_url }}">{{ lesson.title }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endfor %}
 </aside>
