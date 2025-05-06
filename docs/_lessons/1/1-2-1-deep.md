@@ -1,3 +1,30 @@
+---
+layout: default
+title: "Lesson 1.2.1 – Integers – Deep Dive"
+section: 1
+lesson: 2
+sublesson: 1.1
+order: 7
+---
+
+---
+layout: default
+title: "Lesson 1.2.1 – Integers – Deep Dive"
+section: 1
+lesson: 2
+sublesson: 1.1
+order: 7
+---
+
+---
+layout: default
+title: "Lesson 1.2.1 – Integers – Deep Dive"
+section: 1
+lesson: 2
+sublesson: 1.1
+order: 7
+---
+
 # 1.2.1 Deep Dive – Integers in Python
 
 Python makes working with numbers simple, but there's more going on beneath the surface when it comes to integers. Python supports arbitrarily large integers out of the box, so you don’t have to worry about integer overflow like in many other languages.

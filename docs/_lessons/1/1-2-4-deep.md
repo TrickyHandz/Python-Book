@@ -1,3 +1,30 @@
+---
+layout: default
+title: "Lesson 1.2.1 – Strings – Deep Dive"
+section: 1
+lesson: 2
+sublesson: 4.1
+order: 10
+---
+
+---
+layout: default
+title: "Lesson 1.2.1 – Strings – Deep Dive"
+section: 1
+lesson: 2
+sublesson: 4.1
+order: 10
+---
+
+---
+layout: default
+title: "Lesson 1.2.1 – Strings – Deep Dive"
+section: 1
+lesson: 2
+sublesson: 4.1
+order: 10
+---
+
 # 1.2.4 Deep Dive – Strings in Python
 
 Strings are sequences of characters and are one of the most commonly used types in Python. Python strings support a rich set of operations:
