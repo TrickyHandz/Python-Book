@@ -21,7 +21,7 @@
             {% for sub in sub_lessons %}
               <li>
                 <a href="{{ sub.url | relative_url }}">
-                  Lesson {{ sub.section }}.{{ sub.lesson }}.{{ sub.sublesson | split: '.' | last }} – {{ sub.title }}
+                  Lesson {{ sub.section }}.{{ sub.lesson }} – {{ sub.title }}
                 </a>
               </li>
             {% endfor %}
