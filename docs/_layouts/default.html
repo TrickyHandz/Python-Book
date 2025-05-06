@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ page.title }}</title>
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+  <header>
+    <h1><a href="{{ '/' | relative_url }}">Python Learning Textbook</a></h1>
+    <nav>
+      <a href="/index.html">Home</a> |
+      <a href="/license.html">License</a>
+    </nav>
+  </header>
+  <div class="container">
+    {% include sidebar.html %}
+    <main>
+      {{ content }}
+    </main>
+  </div>
+</body>
+</html>
