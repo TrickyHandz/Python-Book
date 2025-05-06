@@ -4,29 +4,30 @@
 
   {% for section in lessons_by_section %}
     <h4>Section {{ section.name }}</h4>
-    {% assign lessons = section.items | sort: "order" %}
-    {% assign grouped_lessons = lessons | group_by: "lesson" %}
     <ul>
-      {% for group in grouped_lessons %}
-        {% assign main_lesson = group.items | where: "sublesson", 0 | first %}
-        {% if main_lesson %}
-          <li>
-            <a href="{{ main_lesson.url | relative_url }}">
-              Lesson {{ section.name }}.{{ group.name }} – {{ main_lesson.title }}
-            </a>
-            {% assign sub_lessons = group.items | reject: "sublesson", 0 %}
-            {% if sub_lessons.size > 0 %}
-              <ul>
-                {% for sub in sub_lessons %}
-                  <li>
-                    <a href="{{ sub.url | relative_url }}">
-                      Lesson {{ section.name }}.{{ sub.lesson }}.{{ sub.sublesson | split: '.' | last }} – {{ sub.title }}
-                    </a>
-                  </li>
-                {% endfor %}
-              </ul>
-            {% endif %}
-          </li>
+      {% assign lessons = section.items | sort: "order" %}
+      {% assign grouped = lessons | group_by: "lesson" %}
+      
+      {% for lesson_group in grouped %}
+        {% assign main = lesson_group.items | where: "sublesson", 0 | first %}
+        {% if main %}
+        <li>
+          <a href="{{ main.url | relative_url }}">
+            Lesson {{ main.section }}.{{ main.lesson }} – {{ main.title }}
+          </a>
+          {% assign sub_lessons = lesson_group.items | reject: "sublesson", 0 %}
+          {% if sub_lessons.size > 0 %}
+          <ul>
+            {% for sub in sub_lessons %}
+              <li>
+                <a href="{{ sub.url | relative_url }}">
+                  Lesson {{ sub.section }}.{{ sub.lesson }}.{{ sub.sublesson | split: '.' | last }} – {{ sub.title }}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+        </li>
         {% endif %}
       {% endfor %}
     </ul>
