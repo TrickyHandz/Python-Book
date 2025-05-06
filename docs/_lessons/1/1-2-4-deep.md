@@ -3,7 +3,7 @@ layout: default
 title: "Strings – Deep Dive"
 section: 1
 lesson: 2
-sublesson: 4.1
+sublesson: 4
 order: 10
 ---
 

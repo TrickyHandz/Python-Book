@@ -3,8 +3,8 @@ layout: default
 title: "Floats – Deep Dive"
 section: 1
 lesson: 2
-sublesson: 2.1
-order: 8
+sublesson: 2
+order: 6
 ---
 
 # 1.2.2 Deep Dive – Floating Point Numbers in Python

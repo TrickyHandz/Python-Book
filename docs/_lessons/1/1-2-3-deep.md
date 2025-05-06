@@ -3,8 +3,8 @@ layout: default
 title: "Booleans – Deep Dive"
 section: 1
 lesson: 2
-sublesson: 3.1
-order: 7
+sublesson: 3
+order: 8
 ---
 
 # 1.2.3 Deep Dive – Boolean Values in Python

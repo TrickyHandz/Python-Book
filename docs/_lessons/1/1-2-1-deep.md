@@ -3,8 +3,8 @@ layout: default
 title: "Integers – Deep Dive"
 section: 1
 lesson: 2
-sublesson: 1.1
-order: 7
+sublesson: 1
+order: 4
 ---
 
 # 1.2.1 Deep Dive – Integers in Python
