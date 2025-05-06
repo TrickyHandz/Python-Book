@@ -1,14 +1,31 @@
 <aside class="sidebar">
-  <h3>Chapters</h3>
-  {% assign sections = site.lessons | group_by: "section" %}
-  {% for section in sections %}
+  <h3>Table of Contents</h3>
+  {% assign lessons_by_section = site.lessons | sort: "order" | group_by: "section" %}
+
+  {% for section in lessons_by_section %}
     <h4>Section {{ section.name }}</h4>
     <ul>
-      {% assign sorted_lessons = section.items | sort: "order" %}
-      {% for lesson in sorted_lessons %}
-        <li>
-          <a href="{{ lesson.url | relative_url }}">{{ lesson.title }}</a>
-        </li>
+      {% assign lessons = section.items | sort: "order" %}
+      {% assign previous_lesson = "" %}
+      {% for lesson in lessons %}
+        {% assign current_lesson = lesson.lesson %}
+        {% assign current_sub = lesson.sublesson %}
+        
+        {% if current_lesson != previous_lesson %}
+          <li><a href="{{ lesson.url | relative_url }}">Lesson {{ section.name }}.{{ current_lesson }}</a></li>
+        {% endif %}
+
+        {% if current_sub != 0 %}
+          <ul>
+            <li>
+              <a href="{{ lesson.url | relative_url }}">
+                Lesson {{ section.name }}.{{ current_lesson }}{{ current_sub >= 1 and current_sub < 10 and current_sub == current_sub | round ? ".#{current_sub | split: "." | last}" : "" }} {{ lesson.title | remove_first: "Lesson " | strip }}
+              </a>
+            </li>
+          </ul>
+        {% endif %}
+
+        {% assign previous_lesson = current_lesson %}
       {% endfor %}
     </ul>
   {% endfor %}
