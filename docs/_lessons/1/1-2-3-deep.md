@@ -1,3 +1,12 @@
+---
+layout: default
+title: "Lesson 1.2.3 – Booleans – Deep Dive"
+section: 1
+lesson: 2
+sublesson: 3.1
+order: 7
+---
+
 # 1.2.3 Deep Dive – Boolean Values in Python
 
 Booleans in Python represent truth values: `True` and `False`. These are the building blocks of conditional logic, allowing you to control the flow of your programs.
