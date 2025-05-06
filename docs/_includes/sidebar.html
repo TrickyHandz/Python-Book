@@ -15,7 +15,7 @@
           <a href="{{ main.url | relative_url }}">
             Lesson {{ main.section }}.{{ main.lesson }} – {{ main.title }}
           </a>
-          {% assign sub_lessons = lesson_group.items | reject: "sublesson", 0 %}
+          {% assign sub_lessons = lesson_group.items | where_exp: "item", "item.sublesson > 0" %}
           {% if sub_lessons.size > 0 %}
           <ul>
             {% for sub in sub_lessons %}
