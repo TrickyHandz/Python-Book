@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Lesson 1.2.1 – Strings – Deep Dive"
+title: "Strings – Deep Dive"
 section: 1
 lesson: 2
 sublesson: 4.1

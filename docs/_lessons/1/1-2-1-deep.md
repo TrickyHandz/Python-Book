@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Lesson 1.2.1 – Integers – Deep Dive"
+title: "Integers – Deep Dive"
 section: 1
 lesson: 2
 sublesson: 1.1

@@ -4,16 +4,29 @@
 
   {% for section in lessons_by_section %}
     <h4>Section {{ section.name }}</h4>
-    {% assign sorted = section.items | sort: "order" %}
-    {% assign current_lesson = "" %}
+    {% assign lessons = section.items | sort: "order" %}
+    {% assign grouped_lessons = lessons | group_by: "lesson" %}
     <ul>
-      {% for lesson in sorted %}
-        {% if lesson.sublesson == 0 %}
-          <li><a href="{{ lesson.url | relative_url }}">Lesson {{ lesson.section }}.{{ lesson.lesson }} – {{ lesson.title | remove_first: 'Lesson ' | strip }}</a></li>
-        {% else %}
-          <ul>
-            <li><a href="{{ lesson.url | relative_url }}">Lesson {{ lesson.section }}.{{ lesson.lesson }}.{{ lesson.sublesson | split: '.' | last }} – {{ lesson.title | remove_first: 'Lesson ' | strip }}</a></li>
-          </ul>
+      {% for group in grouped_lessons %}
+        {% assign main_lesson = group.items | where: "sublesson", 0 | first %}
+        {% if main_lesson %}
+          <li>
+            <a href="{{ main_lesson.url | relative_url }}">
+              Lesson {{ section.name }}.{{ group.name }} – {{ main_lesson.title }}
+            </a>
+            {% assign sub_lessons = group.items | reject: "sublesson", 0 %}
+            {% if sub_lessons.size > 0 %}
+              <ul>
+                {% for sub in sub_lessons %}
+                  <li>
+                    <a href="{{ sub.url | relative_url }}">
+                      Lesson {{ section.name }}.{{ sub.lesson }}.{{ sub.sublesson | split: '.' | last }} – {{ sub.title }}
+                    </a>
+                  </li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+          </li>
         {% endif %}
       {% endfor %}
     </ul>

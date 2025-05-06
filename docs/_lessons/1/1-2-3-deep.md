@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Lesson 1.2.3 – Booleans – Deep Dive"
+title: "Booleans – Deep Dive"
 section: 1
 lesson: 2
 sublesson: 3.1

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Lesson 1.2.1 – Floats – Deep Dive"
+title: "Floats – Deep Dive"
 section: 1
 lesson: 2
 sublesson: 2.1
