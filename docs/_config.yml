@@ -1,0 +1,6 @@
+defaults:
+  - scope:
+      path: "lessons"
+      type: "pages"
+    values:
+      layout: "default"
