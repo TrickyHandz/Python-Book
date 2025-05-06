@@ -1,3 +1,4 @@
+baseurl: "/Python-Book"
 defaults:
   - scope:
       path: "lessons"
