@@ -3,7 +3,7 @@ section: 0
 lesson: 0
 sublesson: 0
 section_title: "Getting Started"
-title: "What is Python and What Can You Do With It"
+title: "What is Python and What Can You Do With It?"
 layout: lesson
 ---
 
