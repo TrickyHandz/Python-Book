@@ -1,27 +1,35 @@
 ---
-title: Python Learning Textbook
+layout: default
+title: Welcome to the Python Book
 ---
 
-# Welcome to the Python Learning Textbook
+# Welcome to the Python Book
 
-This is an open-source, interactive textbook for learning Python. It’s designed for students and educators alike, featuring exercises, code examples, and hidden easter eggs powered by creative scripting and animation.
+This open-source resource is designed to guide learners through the fundamentals of Python programming in a clear, structured, and accessible way. Whether you're a beginner or brushing up on core concepts, this site will help you develop strong foundational skills using Python.
 
-Use the navigation sidebar to explore lessons and topics.
+## 🔍 How to Navigate
+
+- Lessons are organized by topic and follow a logical sequence.
+- You’ll find **deep dives** (marked with "Deep") to explore more technical aspects without interrupting the flow of the main lesson.
+- Use the **collapsible sidebar** to browse lessons by category or jump straight to specific topics.
+
+## 📚 Current Sections
+
+- **Lesson 0: Getting Started with Python**
+  - Learn what Python is, how to install it, and how to set up your environment.
+- **Lesson 1: Core Data Types**
+  - Dive into numbers, strings, booleans, lists, and variables — with deep technical insights included.
+
+We’re continuously expanding with new lessons, practice activities, and coding challenges.
+
+## 💡 Getting Started
+
+To begin, head to the first lesson:
+
+👉 [What is Python?]({{ site.baseurl }}/lessons/0-0-what-is-python/)
+
+Or browse using the menu on the left to pick a topic that interests you.
 
 ---
 
-## 📌 Recently Added Lessons
-
-Here are some of the most recently added or updated lessons:
-
-- [Lesson 0.2 – Interpreted vs. Compiled Programming Languages]({{ '/lessons/0/0-2.md' | relative_url }})
-- [Lesson 1.2.4 – Strings]({{ '/lessons/1/1-2-4.md' | relative_url }})
-- [Lesson 1.2.3 – Booleans]({{ '/lessons/1/1-2-3.md' | relative_url }})
-- [Lesson 1.2.2 – Floats]({{ '/lessons/1/1-2-2.md' | relative_url }})
-- [Lesson 1.2.1 – Integers]({{ '/lessons/1/1-2-1.md' | relative_url }})
-
-Check back often for more updates!
-
----
-
-© 2025 Tim McDaniel. Licensed under [CC BY 4.0]({{ '/license.html' | relative_url }}).
+Want help customizing this for your students or adding a “Contribute” section for GitHub?
