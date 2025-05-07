@@ -1,44 +1,42 @@
+
 <ul class="lesson-nav">
-    {% for section in site.data.lessons %}
-      <li>
-        <strong>{{ section.title }}</strong>
-        <ul>
-          {% for item in section.items %}
-            <li>
-              <a href="{{ site.baseurl }}/lessons/{{ item.file | replace: '.md', '/' }}">
-                {{ item.number }} – {{ item.title }}
-              </a>
-            </li>
-          {% endfor %}
-        </ul>
-      </li>
-    {% endfor %}
-  </ul>
-  
-  <style>
-  .lesson-nav ul {
-    list-style: none;
-    padding-left: 1em;
-  }
-  
-  .lesson-nav li > ul {
-    display: none;
-  }
-  
-  .lesson-nav li.open > ul {
-    display: block;
-  }
-  </style>
-  
-  <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('.lesson-nav > li > strong').forEach(strong => {
-      strong.style.cursor = 'pointer';
-      strong.addEventListener('click', () => {
-        const li = strong.parentElement;
-        li.classList.toggle('open');
-      });
+  {% for section in site.data.lessons %}
+    <li>
+      <strong>{{ section.title }}</strong>
+      <ul>
+        {% for item in section.items %}
+          <li>
+            <a href="{{ site.baseurl }}/lessons/{{ item.section }}/{{ item.file | replace: '.md', '/' }}">
+              {{ item.number }} – {{ item.title }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </li>
+  {% endfor %}
+</ul>
+
+<style>
+.lesson-nav ul {
+  list-style: none;
+  padding-left: 1em;
+}
+.lesson-nav li > ul {
+  display: none;
+}
+.lesson-nav li.open > ul {
+  display: block;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.lesson-nav > li > strong').forEach(strong => {
+    strong.style.cursor = 'pointer';
+    strong.addEventListener('click', () => {
+      const li = strong.parentElement;
+      li.classList.toggle('open');
     });
   });
-  </script>
-  
+});
+</script>
