@@ -1,0 +1,65 @@
+- title: "Lesson 0 – Getting Started with Python"
+  items:
+  - number: '0.0'
+    title: What Is Python
+    file: 0-0-what-is-python.md
+  - number: '0.1'
+    title: History And Philosophy
+    file: 0-1-history-and-philosophy.md
+  - number: '0.2'
+    title: Interpreted Vs Compiled
+    file: 0-2-interpreted-vs-compiled.md
+  - number: '0.3'
+    title: Brython Overview
+    file: 0-3-brython-overview.md
+  - number: '0.4'
+    title: Installing Python Windows
+    file: 0-4-installing-python-windows.md
+  - number: '0.5'
+    title: Installing Python Mac Linux
+    file: 0-5-installing-python-mac-linux.md
+  - number: '0.6'
+    title: Interactive Terminal
+    file: 0-6-interactive-terminal.md
+  - number: '0.7'
+    title: Idle Editor
+    file: 0-7-idle-editor.md
+  - number: '0.8'
+    title: Vscode Editor
+    file: 0-8-vscode-editor.md
+
+- title: "Lesson 1 – Core Data Types"
+  items:
+  - number: 1.0.1
+    title: Integers
+    file: 1-0-1-integers.md
+  - number: 1.0.2
+    title: Integers Deep
+    file: 1-0-2-integers-deep.md
+  - number: 1.0.3
+    title: Floats
+    file: 1-0-3-floats.md
+  - number: 1.0.4
+    title: Floats Deep
+    file: 1-0-4-floats-deep.md
+  - number: 1.0.5
+    title: Booleans
+    file: 1-0-5-booleans.md
+  - number: 1.0.6
+    title: Booleans Deep
+    file: 1-0-6-booleans-deep.md
+  - number: 1.0.7
+    title: Strings
+    file: 1-0-7-strings.md
+  - number: 1.0.8
+    title: Strings Deep
+    file: 1-0-8-strings-deep.md
+  - number: 1.0.9
+    title: Lists
+    file: 1-0-9-lists.md
+  - number: 1.0.10
+    title: Lists Deep
+    file: 1-0-10-lists-deep.md
+  - number: 1.0.11
+    title: Variables And Data Types
+    file: 1-0-11-variables-and-data-types.md
