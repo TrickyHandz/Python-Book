@@ -3,7 +3,7 @@ section: 1
 lesson: 0
 sublesson: 6
 section_title: "Fundamentals of Programming"
-title: "Booleans (Deep Dive)"
+title: "Booleans - Logical Operators"
 layout: lesson
 ---
 

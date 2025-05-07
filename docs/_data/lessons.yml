@@ -53,7 +53,7 @@
     section: section-1
   - number: 1.0.4
     title: Floats – Precision and Rounding
-    file: 1-0-4-floats-deep.md
+    file: 1-0-4-floats-precision-and-rounding.md
     section: section-1
   - number: 1.0.5
     title: Booleans
@@ -61,7 +61,7 @@
     section: section-1
   - number: 1.0.6
     title: Booleans – Logical Operators
-    file: 1-0-6-booleans-deep.md
+    file: 1-0-6-booleans-logical-operators.md
     section: section-1
   - number: 1.0.7
     title: Strings
@@ -69,7 +69,7 @@
     section: section-1
   - number: 1.0.8
     title: Strings – Concatenation and Methods
-    file: 1-0-8-strings-deep.md
+    file: 1-0-8-strings-concatenation-and-methods.md
     section: section-1
   - number: 1.0.9
     title: Lists
@@ -77,7 +77,7 @@
     section: section-1
   - number: 1.0.10
     title: Lists – Indexing and Manipulation
-    file: 1-0-10-lists-deep.md
+    file: 1-0-10-lists-indexing-and-manipulation.md
     section: section-1
   - number: 1.0.11
     title: Variables And Data Types

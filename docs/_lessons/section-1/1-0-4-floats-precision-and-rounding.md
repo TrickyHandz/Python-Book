@@ -3,7 +3,7 @@ section: 1
 lesson: 0
 sublesson: 4
 section_title: "Fundamentals of Programming"
-title: "Floats (Deep Dive)"
+title: "Floats - Precision and Rounding"
 layout: lesson
 ---
 
