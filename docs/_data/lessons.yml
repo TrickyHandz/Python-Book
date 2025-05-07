@@ -1,4 +1,4 @@
-- title: Lesson 0 – Getting Started with Python
+- title: "Lesson 0 – Getting Started with Python"
   items:
   - number: '0.0'
     title: What Is Python
@@ -36,14 +36,15 @@
     title: Vscode Editor
     file: 0-8-vscode-editor.md
     section: section-0
-- title: Lesson 1 – Core Data Types
+
+- title: "Lesson 1 – Core Data Types"
   items:
   - number: 1.0.1
     title: Integers
     file: 1-0-1-integers.md
     section: section-1
   - number: 1.0.2
-    title: Integers Deep
+    title: Integers – Math Operations
     file: 1-0-2-integers-deep.md
     section: section-1
   - number: 1.0.3
@@ -51,7 +52,7 @@
     file: 1-0-3-floats.md
     section: section-1
   - number: 1.0.4
-    title: Floats Deep
+    title: Floats – Precision and Rounding
     file: 1-0-4-floats-deep.md
     section: section-1
   - number: 1.0.5
@@ -59,7 +60,7 @@
     file: 1-0-5-booleans.md
     section: section-1
   - number: 1.0.6
-    title: Booleans Deep
+    title: Booleans – Logical Operators
     file: 1-0-6-booleans-deep.md
     section: section-1
   - number: 1.0.7
@@ -67,7 +68,7 @@
     file: 1-0-7-strings.md
     section: section-1
   - number: 1.0.8
-    title: Strings Deep
+    title: Strings – Concatenation and Methods
     file: 1-0-8-strings-deep.md
     section: section-1
   - number: 1.0.9
@@ -75,7 +76,7 @@
     file: 1-0-9-lists.md
     section: section-1
   - number: 1.0.10
-    title: Lists Deep
+    title: Lists – Indexing and Manipulation
     file: 1-0-10-lists-deep.md
     section: section-1
   - number: 1.0.11
