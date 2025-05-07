@@ -1,0 +1,35 @@
+section,lesson,sublesson,section_title,title,filename
+0,0,0,Getting Started,What is Python and What Can You Do With It?,0-0-what-is-python.md
+0,1,0,Getting Started,History and Philosophy,0-1-history-and-philosophy.md
+0,2,0,Getting Started,Interpreted vs Compiled Languages,0-2-interpreted-vs-compiled.md
+0,3,0,Getting Started,Testing Python in the Browser with Brython,0-3-brython-overview.md
+0,4,0,Getting Started,Installing Python on Windows,0-4-installing-python-windows.md
+0,5,0,Getting Started,Installing Python on Mac and Linux,0-5-installing-python-mac-linux.md
+0,6,0,Getting Started,Using the Interactive Terminal (REPL),0-6-interactive-terminal.md
+0,7,0,Getting Started,Using IDLE,0-7-idle-editor.md
+0,8,0,Getting Started,Using Visual Studio Code,0-8-vscode-editor.md
+1,0,0,Python Fundamentals,Variables and Data Types,1-0-variables-and-data-types.md
+1,0,1,Python Fundamentals,Integers,1-0-1-integers.md
+1,0,2,Python Fundamentals,Integers (Deep Dive),1-0-2-integers-deep.md
+1,0,3,Python Fundamentals,Floats,1-0-3-floats.md
+1,0,4,Python Fundamentals,Floats (Deep Dive),1-0-4-floats-deep.md
+1,0,5,Python Fundamentals,Booleans,1-0-5-booleans.md
+1,0,6,Python Fundamentals,Booleans (Deep Dive),1-0-6-booleans-deep.md
+1,0,7,Python Fundamentals,Strings,1-0-7-strings.md
+1,0,8,Python Fundamentals,Strings (Deep Dive),1-0-8-strings-deep.md
+1,0,9,Python Fundamentals,List,1-0-9-lists.md
+1,0,10,Python Fundamentals,Lists (Deep Dive),1-0-10-lists-deep.md
+1,1,0,Python Fundamentals,Functions and Parameters,1-1-functions-and-parameters.md
+1,2,0,Python Fundamentals,Built-in Functions,1-2-built-in-functions.md
+2,0,0,Control Flow,If Statements,2-0-if-statements.md
+2,1,0,Control Flow,Logical Operators,2-1-logical-operators.md
+2,2,0,Control Flow,"Loops (for, while)",2-2-loops-for-while.md
+3,0,0,Data Collections and Sequences,Lists and Tuples,3-0-lists-and-tuples.md
+3,1,0,Data Collections and Sequences,Dictionaries,3-1-dictionaries.md
+3,2,0,Data Collections and Sequences,Mutable vs Immutable,3-2-mutable-vs-immutable.md
+4,0,0,Debugging and Error Handling,Common Errors,4-0-common-errors.md
+4,1,0,Debugging and Error Handling,Try and Except,4-1-try-except.md
+4,2,0,Debugging and Error Handling,Debugging Techniques,4-2-debugging-techniques.md
+5,0,0,Scripting and File I/O,Working with Files,5-0-working-with-files.md
+5,1,0,Scripting and File I/O,User Input,5-1-user-input.md
+5,2,0,Scripting and File I/O,Practical Scripting,5-2-practical-scripting.md
