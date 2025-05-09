@@ -6,6 +6,7 @@ section_title: "Getting Started"
 title: "Testing Python in the Browser with Brython"
 layout: lesson
 show_brython: true
+brython_starter: hello_world.py
 ---
 
 # Testing Python in the Browser with Brython
