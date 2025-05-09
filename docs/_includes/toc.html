@@ -1,11 +1,25 @@
-<nav class="toc-tree">
+<div class="toc-search">
+    <input
+      type="text"
+      id="tocSearch"
+      placeholder="🔍 Search lessons..."
+      oninput="filterTOC()"
+    >
+  </div>
+  
+  <nav class="toc-tree" id="tocTree">
     {% for section in site.data.lessons %}
-    <details {% if forloop.first %}open{% endif %}>
+    <details open class="toc-section">
       <summary>{{ section.title }}</summary>
       <ul>
         {% for lesson in section.items %}
-        <li>
-          <a href="{{ '/lessons/' | append: lesson.section | append: '/' | append: lesson.file | replace: '.md','' | relative_url }}">
+        <li class="toc-lesson"
+            data-title="{{ lesson.title | downcase }}"
+            data-tags="{{ lesson.tags | join: ',' | downcase }}"
+            data-summary="{{ lesson.summary | downcase }}">
+          <a
+            href="{{ '/lessons/' | append: lesson.section | append: '/' | append: lesson.file | replace: '.md','' | relative_url }}"
+            class="{% if page.url contains lesson.file | replace: '.md','' %}active{% endif %}">
             {{ lesson.title }}
           </a>
         </li>
@@ -14,4 +28,23 @@
     </details>
     {% endfor %}
   </nav>
+  
+  <script>
+  function filterTOC() {
+    const query = document.getElementById("tocSearch").value.toLowerCase();
+    const items = document.querySelectorAll(".toc-lesson");
+  
+    items.forEach(item => {
+      const text = item.dataset.title + " " + item.dataset.tags + " " + item.dataset.summary;
+      const match = text.includes(query);
+      item.style.display = match ? "list-item" : "none";
+    });
+  
+    // Collapse sections with no visible lessons
+    document.querySelectorAll(".toc-section").forEach(section => {
+      const visible = section.querySelectorAll("li.toc-lesson:not([style*='display: none'])").length > 0;
+      section.open = visible;
+    });
+  }
+  </script>
   
