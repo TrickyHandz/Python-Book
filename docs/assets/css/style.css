@@ -31,6 +31,20 @@ body {
   z-index: 10; /* optional but helpful if content scrolls near it */
 }
 
+.toc-tree details {
+  margin-bottom: 1em;
+}
+
+.toc-tree summary {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.toc-tree ul {
+  list-style-type: none;
+  padding-left: 1em;
+}
+
 .content {
   flex: 1;
   overflow-y: auto;
