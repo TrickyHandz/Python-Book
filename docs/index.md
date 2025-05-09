@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: lesson
 title: Welcome to the Python Book
 ---
 
