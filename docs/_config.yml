@@ -4,7 +4,7 @@ defaults:
       path: "lessons"
       type: "pages"
     values:
-      layout: "default"
+      layout: "lesson"
 
 collections:
   lessons:
