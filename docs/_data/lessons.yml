@@ -1,85 +1,165 @@
-- title: "Lesson 0 – Getting Started with Python"
+- title: "Lesson 0 \u2013 Getting Started with Python"
   items:
   - number: '0.0'
     title: What Is Python
     file: 0-0-what-is-python.md
     section: section-0
+    tags:
+    - intro
+    - python
+    summary: Lesson on What Is Python.
   - number: '0.1'
     title: History And Philosophy
     file: 0-1-history-and-philosophy.md
     section: section-0
+    tags:
+    - design
+    - history
+    - philosophy
+    summary: Lesson on History And Philosophy.
   - number: '0.2'
     title: Interpreted Vs Compiled
     file: 0-2-interpreted-vs-compiled.md
     section: section-0
+    tags:
+    - compilation
+    - execution
+    - interpreted
+    summary: Lesson on Interpreted Vs Compiled.
   - number: '0.3'
     title: Brython Overview
     file: 0-3-brython-overview.md
     section: section-0
+    tags:
+    - browser
+    - brython
+    - editor
+    summary: Lesson on Brython Overview.
   - number: '0.4'
     title: Installing Python Windows
     file: 0-4-installing-python-windows.md
     section: section-0
+    tags:
+    - installation
+    - intro
+    - python
+    summary: Lesson on Installing Python Windows.
   - number: '0.5'
     title: Installing Python Mac Linux
     file: 0-5-installing-python-mac-linux.md
     section: section-0
+    tags:
+    - installation
+    - intro
+    - python
+    summary: Lesson on Installing Python Mac Linux.
   - number: '0.6'
     title: Interactive Terminal
     file: 0-6-interactive-terminal.md
     section: section-0
+    tags:
+    - interactive
+    summary: Lesson on Interactive Terminal.
   - number: '0.7'
     title: Idle Editor
     file: 0-7-idle-editor.md
     section: section-0
+    tags:
+    - editor
+    summary: Lesson on Idle Editor.
   - number: '0.8'
     title: Vscode Editor
     file: 0-8-vscode-editor.md
     section: section-0
-
-- title: "Lesson 1 – Core Data Types"
+    tags:
+    - editor
+    summary: Lesson on Vscode Editor.
+- title: "Lesson 1 \u2013 Core Data Types"
   items:
   - number: 1.0.1
     title: Integers
     file: 1-0-1-integers.md
     section: section-1
+    tags:
+    - int
+    - math
+    - numbers
+    summary: Lesson on Integers.
   - number: 1.0.2
-    title: Integers – Math Operations
+    title: "Integers \u2013 Math Operations"
     file: 1-0-2-integers-deep.md
     section: section-1
+    tags:
+    - int
+    - math
+    - numbers
+    summary: "Lesson on Integers \u2013 Math Operations."
   - number: 1.0.3
     title: Floats
     file: 1-0-3-floats.md
     section: section-1
+    tags:
+    - decimal
+    - float
+    - precision
+    summary: Lesson on Floats.
   - number: 1.0.4
-    title: Floats – Precision and Rounding
+    title: "Floats \u2013 Precision and Rounding"
     file: 1-0-4-floats-precision-and-rounding.md
     section: section-1
+    tags:
+    - decimal
+    - float
+    - precision
+    summary: "Lesson on Floats \u2013 Precision and Rounding."
   - number: 1.0.5
     title: Booleans
     file: 1-0-5-booleans.md
     section: section-1
+    tags:
+    - bool
+    - logic
+    summary: Lesson on Booleans.
   - number: 1.0.6
-    title: Booleans – Logical Operators
+    title: "Booleans \u2013 Logical Operators"
     file: 1-0-6-booleans-logical-operators.md
     section: section-1
+    tags:
+    - bool
+    - logic
+    summary: "Lesson on Booleans \u2013 Logical Operators."
   - number: 1.0.7
     title: Strings
     file: 1-0-7-strings.md
     section: section-1
+    tags:
+    - strings
+    summary: Lesson on Strings.
   - number: 1.0.8
-    title: Strings – Concatenation and Methods
+    title: "Strings \u2013 Concatenation and Methods"
     file: 1-0-8-strings-concatenation-and-methods.md
     section: section-1
+    tags:
+    - strings
+    summary: "Lesson on Strings \u2013 Concatenation and Methods."
   - number: 1.0.9
     title: Lists
     file: 1-0-9-lists.md
     section: section-1
+    tags:
+    - lists
+    summary: Lesson on Lists.
   - number: 1.0.10
-    title: Lists – Indexing and Manipulation
+    title: "Lists \u2013 Indexing and Manipulation"
     file: 1-0-10-lists-indexing-and-manipulation.md
     section: section-1
+    tags:
+    - lists
+    summary: "Lesson on Lists \u2013 Indexing and Manipulation."
   - number: 1.0.11
     title: Variables And Data Types
     file: 1-0-11-variables-and-data-types.md
     section: section-1
+    tags:
+    - variables
+    summary: Lesson on Variables And Data Types.
