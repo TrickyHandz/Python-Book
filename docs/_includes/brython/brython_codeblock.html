@@ -1,10 +1,10 @@
 {% capture starter_code %}
-{% if include.starter == "brython_overview.py" %}
-{% include brython_starters/brython_overview.py %}
-{% elsif include.starter == "hello_world.py" %}
-{% include brython_starters/hello_world.py %}
-{% elsif include.starter == "input_example.py" %}
-{% include brython_starters/input_example.py %}
+{% if include.starter == "section-0/brython_overview.py" %}
+{% include brython/starters/section-0/brython_overview.py %}
+{% elsif include.starter == "section-1/hello_world.py" %}
+{% include brython/starters/section-1/hello_world.py %}
+{% elsif include.starter == "section-2/input_example.py" %}
+{% include brython/starters/section-2/input_example.py %}
 {% else %}
 # Write your Python code here
 print("Hello from Brython!")
