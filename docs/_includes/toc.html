@@ -1,11 +1,13 @@
 <nav class="toc-tree">
     {% for section in site.data.lessons %}
     <details {% if forloop.first %}open{% endif %}>
-      <summary>Section {{ section.section }}: {{ section.title }}</summary>
+      <summary>{{ section.title }}</summary>
       <ul>
-        {% for lesson in section.lessons %}
+        {% for lesson in section.items %}
         <li>
-          <a href="{{ lesson.url | relative_url }}">{{ lesson.title }}</a>
+          <a href="{{ '/lessons/' | append: lesson.section | append: '/' | append: lesson.file | replace: '.md','' | relative_url }}">
+            {{ lesson.title }}
+          </a>
         </li>
         {% endfor %}
       </ul>
