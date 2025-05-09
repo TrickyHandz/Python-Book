@@ -5,6 +5,7 @@ sublesson: 0
 section_title: "Getting Started"
 title: "Testing Python in the Browser with Brython"
 layout: lesson
+show_brython: true
 ---
 
 # Testing Python in the Browser with Brython
