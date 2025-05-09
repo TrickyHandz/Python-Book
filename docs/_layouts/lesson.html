@@ -1,5 +1,47 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ page.title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 
-{{ content }}
+  <!-- Brython Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/brython@3.11.0/brython.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/brython@3.11.0/brython_stdlib.js"></script>
+</head>
+
+<body onload="brython()">
+  <header class="mobile-controls">
+    <button onclick="toggleTOC()">☰ Menu</button>
+    {% if page.show_brython %}
+    <button onclick="toggleBrython()">🧠 Code</button>
+    {% endif %}
+  </header>
+
+  <div class="layout">
+    <aside class="toc" id="toc">
+      {% include toc.html %}
+    </aside>
+
+    <main class="content">
+      {{ content }}
+    </main>
+
+    {% if page.show_brython %}
+    <aside class="brython-panel" id="brythonPanel">
+      {% include brython_codeblock.html id="interactive" starter=page.brython_starter %}
+    </aside>
+    {% endif %}
+  </div>
+
+  <script>
+    function toggleTOC() {
+      document.getElementById('toc').classList.toggle('visible');
+    }
+    function toggleBrython() {
+      document.getElementById('brythonPanel').classList.toggle('visible');
+    }
+  </script>
+</body>
+</html>
