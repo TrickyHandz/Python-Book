@@ -20,11 +20,15 @@ body {
 }
 
 .toc {
+  position: sticky;
+  top: 0;
   flex: 0 0 250px;
+  height: 100vh;
   overflow-y: auto;
   background: #f0f0f0;
   border-right: 1px solid #ccc;
   padding: 1em;
+  z-index: 10; /* optional but helpful if content scrolls near it */
 }
 
 .content {
