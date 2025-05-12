@@ -19,10 +19,10 @@ print("Hello from Brython!")
 {{ starter_code }}
   </textarea>
   <button onclick="runBrython('{{ include.id }}')">Run</button>
-  <pre id="output{{ include.id }}" style="background:#111;color:#0f0;padding:1em;"></pre>
+  <pre id="output{{ include.id }}" style="background:#111;color:#0f0;padding:1em;min-height:1.5em;"></pre>
 </div>
 
-<!-- Redirect print() and errors to the output box -->
+<!-- Python: Redirect print() and errors to the output box -->
 <script type="text/python">
 from browser import document
 import sys
@@ -35,14 +35,14 @@ class OutputCatcher:
     def flush(self):
         pass  # Needed for compatibility
 
-# Call this before running user code to bind stdout/stderr
+# Sets up sys.stdout and sys.stderr redirection
 def setup_output(id):
     catcher = OutputCatcher(id)
     sys.stdout = catcher
     sys.stderr = catcher
 </script>
 
-<!-- JavaScript for tab indentation and running Brython code -->
+<!-- JavaScript for handling tab indent and running Brython code -->
 <script>
 function handleTab(e) {
   if (e.key === "Tab") {
@@ -61,25 +61,29 @@ function runBrython(id) {
   const output = document.getElementById("output" + id);
   output.textContent = "";
 
-  // Remove any existing user script
+  // Remove old scripts if they exist
   const scriptId = `user_script_${id}`;
-  let existingScript = document.getElementById(scriptId);
-  if (existingScript) existingScript.remove();
+  const setupId = `setup_script_${id}`;
+  let oldScript = document.getElementById(scriptId);
+  let oldSetup = document.getElementById(setupId);
+  if (oldScript) oldScript.remove();
+  if (oldSetup) oldSetup.remove();
 
-  // Insert setup script to capture print() output
-  const setupOutputScript = document.createElement("script");
-  setupOutputScript.type = "text/python";
-  setupOutputScript.textContent = `setup_output('${id}')`;
-  document.body.appendChild(setupOutputScript);
+  // Add setup script to redirect output
+  const setupScript = document.createElement("script");
+  setupScript.type = "text/python";
+  setupScript.id = setupId;
+  setupScript.textContent = `setup_output('${id}')`;
+  document.body.appendChild(setupScript);
 
-  // Insert the actual user script
-  const script = document.createElement("script");
-  script.type = "text/python";
-  script.id = scriptId;
-  script.textContent = textarea.value;
-  document.body.appendChild(script);
+  // Add user's Brython code as a new <script> element
+  const userScript = document.createElement("script");
+  userScript.type = "text/python";
+  userScript.id = scriptId;
+  userScript.textContent = textarea.value;
+  document.body.appendChild(userScript);
 
-  // Re-initialize Brython to run the new scripts
-  brython();
+  // Slight delay to let DOM update before Brython runs
+  setTimeout(() => brython(), 50);
 }
 </script>
