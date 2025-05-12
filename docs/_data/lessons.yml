@@ -76,7 +76,7 @@
     summary: Lesson on Vscode Editor.
 - title: "Lesson 1 \u2013 Core Data Types"
   items:
-  - number: 1.0.1
+  - number: 1.0.0
     title: Integers
     file: 1-0-1-integers.md
     section: section-1
