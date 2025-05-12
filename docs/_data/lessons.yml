@@ -156,9 +156,9 @@
     tags:
     - lists
     summary: "Lesson on Lists \u2013 Indexing and Manipulation."
-  - number: 1.0.11
+  - number: 1.0.0
     title: Variables And Data Types
-    file: 1-0-11-variables-and-data-types.md
+    file: 1-0-variables-and-data-types.md
     section: section-1
     tags:
     - variables
