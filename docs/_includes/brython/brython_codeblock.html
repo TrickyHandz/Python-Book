@@ -51,10 +51,18 @@ function runBrython(id) {
   const textarea = document.getElementById("code" + id);
   const output = document.getElementById("output" + id);
   output.textContent = "";
-  try {
-    __BRYTHON__.py2js(textarea.value, "user_code", "user_code", "__main__").run();
-  } catch (err) {
-    output.textContent = "Error: " + err.message;
-  }
+
+  const scriptId = `user_script_${id}`;
+  let existingScript = document.getElementById(scriptId);
+  if (existingScript) existingScript.remove();
+
+  const script = document.createElement("script");
+  script.type = "text/python";
+  script.id = scriptId;
+  script.textContent = textarea.value;
+  document.body.appendChild(script);
+  
+  brython(); // Re-run Brython to evaluate new script
 }
+
 </script>
