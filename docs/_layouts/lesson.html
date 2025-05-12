@@ -6,13 +6,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 
-  <!-- Brython Scripts -->
+  <!-- Brython -->
   <script src="https://cdn.jsdelivr.net/npm/brython@3.11.0/brython.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/brython@3.11.0/brython_stdlib.js"></script>
 </head>
 
-<body onload="brython()">
-  <header class="mobile-controls">
+<body>
+
+  <!-- Dummy main script to prevent __name__ errors -->
+  <script type="text/python" id="main">pass</script>
+
+  <!-- Global Output Redirection Function -->
+  <script type="text/python">
+from browser import document
+import sys
+
+class OutputCatcher:
+    def __init__(self, id):
+        self.output = document[f"output{id}"]
+    def write(self, data):
+        self.output.text += str(data)
+    def flush(self): pass
+
+def setup_output(id):
+    sys.stdout = OutputCatcher(id)
+    sys.stderr = OutputCatcher(id)
+  </script>
+
+  <header>
     <button onclick="toggleTOC()">☰ Menu</button>
     {% if page.show_brython %}
     <button onclick="toggleBrython()">🧠 Code</button>
@@ -25,31 +46,6 @@
     </aside>
 
     <main class="content">
-
-      <!-- Brython Output Setup Script: globally defines setup_output() -->
-      <script type="text/python" id="brython-setup">
-from browser import document
-import sys
-
-class OutputCatcher:
-    def __init__(self, id):
-        self.output = document[f"output{id}"]
-    def write(self, data):
-        self.output.text += str(data)
-    def flush(self):
-        pass  # Needed for compatibility
-
-def setup_output(id):
-    catcher = OutputCatcher(id)
-    sys.stdout = catcher
-    sys.stderr = catcher
-      </script>
-
-      <!-- Dummy Brython main module to prevent __name__ error -->
-      <script type="text/python" id="main">
-# Dummy main module to satisfy Brython runtime
-      </script>
-
       {{ content }}
     </main>
 
@@ -61,12 +57,18 @@ def setup_output(id):
   </div>
 
   <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      brython(); // safe to run now that DOM and scripts are parsed
+    });
+
     function toggleTOC() {
       document.getElementById('toc').classList.toggle('visible');
     }
+
     function toggleBrython() {
       document.getElementById('brythonPanel').classList.toggle('visible');
     }
   </script>
+
 </body>
 </html>
