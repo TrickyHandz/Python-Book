@@ -1,23 +1,21 @@
-{% capture starter_code %}
-{% if include.starter == "section-0/brython_overview.py" %}
-{% include brython/starters/section-0/brython_overview.py %}
-{% elsif include.starter == "section-1/hello_world.py" %}
-{% include brython/starters/section-1/hello_world.py %}
-{% elsif include.starter == "section-2/input_example.py" %}
-{% include brython/starters/section-2/input_example.py %}
-{% elsif include.starter == "intro/hello_world.py" %}
-{% include brython/starters/intro/hello_world.py %}
-{% else %}
+{%- capture starter_code -%}
+{%- if include.starter == "section-0/brython_overview.py" -%}
+{%- include brython/starters/section-0/brython_overview.py -%}
+{%- elsif include.starter == "section-1/hello_world.py" -%}
+{%- include brython/starters/section-1/hello_world.py -%}
+{%- elsif include.starter == "section-2/input_example.py" -%}
+{%- include brython/starters/section-2/input_example.py -%}
+{%- elsif include.starter == "intro/hello_world.py" -%}
+{%- include brython/starters/intro/hello_world.py -%}
+{%- else -%}
 # Write your Python code here
 print("Hello from Brython!")
-{% endif %}
-{% endcapture %}
+{%- endif -%}
+{%- endcapture -%}
 
 <!-- Brython code editor and output -->
 <div class="brython-wrapper" style="margin-bottom: 2em;">
-  <textarea id="code{{ include.id }}" style="width:100%;height:150px;" onkeydown="handleTab(event)">
-{{ starter_code }}
-  </textarea>
+  <textarea id="code{{ include.id }}" style="width:100%;height:150px;" onkeydown="handleTab(event)">{{ starter_code }}</textarea>
   <button onclick="runBrython('{{ include.id }}')">Run</button>
   <pre id="output{{ include.id }}" style="background:#111;color:#0f0;padding:1em;min-height:1.5em;"></pre>
 </div>
