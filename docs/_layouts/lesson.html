@@ -45,6 +45,11 @@ def setup_output(id):
     sys.stderr = catcher
       </script>
 
+      <!-- Dummy Brython main module to prevent __name__ error -->
+      <script type="text/python" id="main">
+# Dummy main module to satisfy Brython runtime
+      </script>
+
       {{ content }}
     </main>
 
