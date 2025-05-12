@@ -7,7 +7,7 @@ title: "Booleans - Logical Operators"
 layout: lesson
 ---
 
-# Booleans (Deep Dive)
+# Booleans - Logical Operators
 
 Let’s go deeper into how booleans work in Python—including how other values can be treated as true or false.
 
