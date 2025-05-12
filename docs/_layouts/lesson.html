@@ -25,6 +25,26 @@
     </aside>
 
     <main class="content">
+
+      <!-- Brython Output Setup Script: globally defines setup_output() -->
+      <script type="text/python" id="brython-setup">
+from browser import document
+import sys
+
+class OutputCatcher:
+    def __init__(self, id):
+        self.output = document[f"output{id}"]
+    def write(self, data):
+        self.output.text += str(data)
+    def flush(self):
+        pass  # Needed for compatibility
+
+def setup_output(id):
+    catcher = OutputCatcher(id)
+    sys.stdout = catcher
+    sys.stderr = catcher
+      </script>
+
       {{ content }}
     </main>
 
