@@ -6,41 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 
-  <!-- Brython Scripts -->
+  <!-- Brython -->
   <script src="https://cdn.jsdelivr.net/npm/brython@3.11.0/brython.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/brython@3.11.0/brython_stdlib.js"></script>
 </head>
 
 <body>
-  <!-- Dummy module to prevent __name__ assignment errors -->
-  <script type="text/python" id="main">
-pass
-  </script>
-
-  <!-- Define setup_output globally for all Brython code blocks -->
-  <script type="text/python" id="brython-setup">
-from browser import document
-import sys
-
-class OutputCatcher:
-    def __init__(self, id):
-        self.output = document[f"output{id}"]
-    def write(self, data):
-        self.output.text += str(data)
-    def flush(self): pass
-
-def setup_output(id):
-    sys.stdout = OutputCatcher(id)
-    sys.stderr = OutputCatcher(id)
-  </script>
-
-  <!-- Wait until all scripts and DOM are ready before running Brython -->
-  <script>
-    window.addEventListener("DOMContentLoaded", () => {
-      brython();
-    });
-  </script>
-
   <header class="mobile-controls">
     <button onclick="toggleTOC()">☰ Menu</button>
     {% if page.show_brython %}
@@ -65,9 +36,13 @@ def setup_output(id):
   </div>
 
   <script>
+    // Ensure Brython initializes after all scripts are ready
+    window.addEventListener("DOMContentLoaded", () => brython());
+
     function toggleTOC() {
       document.getElementById('toc').classList.toggle('visible');
     }
+
     function toggleBrython() {
       document.getElementById('brythonPanel').classList.toggle('visible');
     }
