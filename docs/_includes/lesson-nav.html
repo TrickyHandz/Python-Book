@@ -1,42 +1,45 @@
+<div class="toc">
+  <div class="toc-search">
+    <input
+      type="text"
+      id="tocSearch"
+      placeholder="🔍 Search lessons..."
+      oninput="filterTOC()"
+    >
+  </div>
 
-<ul class="lesson-nav">
-  {% for section in site.data.lessons %}
-    <li>
-      <strong>{{ section.title }}</strong>
+  <nav class="toc-tree lesson-nav">
+    {% for section in site.data.lessons %}
+    <details open>
+      <summary>{{ section.title }}</summary>
       <ul>
         {% for item in section.items %}
-          <li>
-            <a href="{{ site.baseurl }}/lessons/{{ item.section }}/{{ item.file | replace: '.md', '/' }}">
-              {{ item.number }} – {{ item.title }}
-            </a>
-          </li>
+        <li class="toc-lesson">
+          <a href="{{ site.baseurl }}/lessons/{{ item.section }}/{{ item.file | replace: '.md', '/' }}">
+            {{ item.number }} – {{ item.title }}
+          </a>
+        </li>
         {% endfor %}
       </ul>
-    </li>
-  {% endfor %}
-</ul>
-
-<style>
-.lesson-nav ul {
-  list-style: none;
-  padding-left: 1em;
-}
-.lesson-nav li > ul {
-  display: none;
-}
-.lesson-nav li.open > ul {
-  display: block;
-}
-</style>
+    </details>
+    {% endfor %}
+  </nav>
+</div>
 
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-  document.querySelectorAll('.lesson-nav > li > strong').forEach(strong => {
-    strong.style.cursor = 'pointer';
-    strong.addEventListener('click', () => {
-      const li = strong.parentElement;
-      li.classList.toggle('open');
-    });
+function filterTOC() {
+  const query = document.getElementById("tocSearch").value.toLowerCase();
+  const items = document.querySelectorAll(".toc-lesson");
+
+  items.forEach(item => {
+    const text = item.textContent.toLowerCase();
+    item.style.display = text.includes(query) ? "list-item" : "none";
   });
-});
+
+  document.querySelectorAll("details").forEach(section => {
+    const anyVisible = [...section.querySelectorAll("li")]
+      .some(li => li.style.display !== "none");
+    section.open = anyVisible;
+  });
+}
 </script>
