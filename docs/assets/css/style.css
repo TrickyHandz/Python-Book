@@ -81,10 +81,33 @@ body {
 .brython-panel {
   flex: 0 0 400px;
   overflow-y: auto;
-  border-left: 1px solid #ccc;
-  background: #fafafa;
+  border-left: 1px solid var(--input-border);
+  background: var(--sidebar-bg);
+  color: var(--sidebar-text);
   padding: 1em;
+  transition: background-color 0.3s, color 0.3s;
 }
+
+.brython-panel textarea {
+  width: 100%;
+  background-color: var(--input-bg);
+  color: var(--input-text);
+  border: 1px solid var(--input-border);
+  font-family: monospace;
+  padding: 0.5em;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.brython-panel button {
+  margin-top: 0.5em;
+  background-color: var(--input-bg);
+  color: var(--input-text);
+  border: 1px solid var(--input-border);
+  padding: 0.5em 1em;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
 
 /* Responsive Layout */
 @media (max-width: 768px) {
