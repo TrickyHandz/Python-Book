@@ -148,7 +148,7 @@ body {
   }
 
   .toc:not(.visible),
-  .brython-panel.toc:not(.visible) {
+  .brython-panel:not(.visible) {
     display: none;
   }
 
