@@ -147,8 +147,8 @@ body {
     flex-direction: column;
   }
 
-  .toc,
-  .brython-panel {
+  .toc:not(.visible),
+  .brython-panel.toc:not(.visible) {
     display: none;
   }
 
