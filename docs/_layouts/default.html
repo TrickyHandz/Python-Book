@@ -4,20 +4,57 @@
   <meta charset="UTF-8">
   <title>{{ page.title }}</title>
   <link rel="stylesheet" href="{{ site.baseurl }}/assets/style.css">
+
+  <!-- Set theme class early to prevent FOUC -->
+  <script>
+    (function () {
+      const storedTheme = localStorage.getItem('theme');
+      if (storedTheme === 'light') {
+        document.documentElement.classList.add('light');
+      } else if (storedTheme === 'dark') {
+        document.documentElement.classList.add('dark');
+      }
+    })();
+  </script>
 </head>
 <body>
   <header>
     <h1><a href="{{ '/' | relative_url }}">Python Learning Textbook</a></h1>
     <nav>
       <a href="{{ site.baseurl }}/index.html">Home</a> |
-      <a href="{{ site.baseurl }}/license.html">License</a>
+      <a href="{{ site.baseurl }}/license.html">License</a> |
+      <button id="theme-toggle" style="margin-left: 1em;">🌓 Toggle Theme</button>
     </nav>
   </header>
+
   <div class="container">
     {% include lesson-nav.html %}
     <main>
       {{ content }}
     </main>
   </div>
+
+  <!-- Theme toggle script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const button = document.getElementById('theme-toggle');
+      if (!button) return;
+
+      button.addEventListener('click', () => {
+        const root = document.documentElement;
+        if (root.classList.contains('dark')) {
+          root.classList.remove('dark');
+          root.classList.add('light');
+          localStorage.setItem('theme', 'light');
+        } else if (root.classList.contains('light')) {
+          root.classList.remove('light');
+          localStorage.removeItem('theme'); // fall back to system
+        } else {
+          root.classList.add('dark');
+          localStorage.setItem('theme', 'dark');
+        }
+      });
+    });
+  </script>
 </body>
 </html>

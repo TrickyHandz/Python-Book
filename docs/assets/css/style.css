@@ -95,3 +95,34 @@ body {
     padding: 1em;
   }
 }
+
+/* Light and dark themes */
+:root {
+  --background-color: white;
+  --text-color: black;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #121212;
+    --text-color: #ffffff;
+  }
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* User override: light */
+.light {
+  --background-color: white;
+  --text-color: black;
+}
+
+/* User override: dark */
+.dark {
+  --background-color: #121212;
+  --text-color: #ffffff;
+}
