@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>{{ page.title }}</title>
-  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/style.css">
 
   <!-- Set theme class early to prevent FOUC -->
   <script>
@@ -18,24 +18,26 @@
   </script>
 </head>
 <body>
-  <header>
-    <h1><a href="{{ '/' | relative_url }}">Python Learning Textbook</a></h1>
-    <nav>
-      <a href="{{ site.baseurl }}/index.html">Home</a> |
-      <a href="{{ site.baseurl }}/license.html">License</a> |
-      <button id="theme-toggle" style="margin-left: 1em;">🌓 Toggle Theme</button>
-    </nav>
+  <header class="mobile-controls">
+    <button onclick="toggleTOC()">☰ Menu</button>
+    <button id="theme-toggle" style="margin-left: 1em;">🌓 Toggle Theme</button>
   </header>
 
-  <div class="container">
+  <div class="layout">
     {% include lesson-nav.html %}
-    <main>
+    <main class="content">
       {{ content }}
     </main>
+    {% if page.show_brython %}
+    <div class="brython-panel">
+      {% include brython-panel.html %}
+    </div>
+    {% endif %}
   </div>
 
-  <!-- Theme toggle script -->
+  <!-- Theme + TOC Toggle Scripts -->
   <script>
+    // Theme toggle
     document.addEventListener('DOMContentLoaded', () => {
       const button = document.getElementById('theme-toggle');
       if (!button) return;
@@ -48,13 +50,21 @@
           localStorage.setItem('theme', 'light');
         } else if (root.classList.contains('light')) {
           root.classList.remove('light');
-          localStorage.removeItem('theme'); // fall back to system
+          localStorage.removeItem('theme');
         } else {
           root.classList.add('dark');
           localStorage.setItem('theme', 'dark');
         }
       });
     });
+
+    // TOC toggle for mobile
+    function toggleTOC() {
+      const toc = document.querySelector('.toc');
+      if (toc) {
+        toc.classList.toggle('visible');
+      }
+    }
   </script>
 </body>
 </html>
