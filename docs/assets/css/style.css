@@ -54,8 +54,14 @@ body {
 }
 
 .toc-tree summary {
+  position: sticky;
+  top: 0;
+  background-color: var(--sidebar-bg);
+  z-index: 2;
   font-weight: bold;
   cursor: pointer;
+  padding: 0.25em 0;
+  border-bottom: 1px solid var(--input-border);
 }
 
 .toc-tree ul {
