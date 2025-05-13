@@ -1,6 +1,9 @@
 body {
   margin: 0;
   font-family: sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
 }
 
 /* Mobile Controls */
@@ -19,19 +22,31 @@ body {
   display: flex;
   flex-direction: row;
   height: 100vh;
+  overflow: hidden; /* Prevent extra scrollbars */
 }
 
 .toc {
-  position: sticky;
-  top: 0;
   flex: 0 0 250px;
-  height: 100vh;
   overflow-y: auto;
+  height: 100vh;
   background: var(--sidebar-bg);
   border-right: 1px solid var(--input-border);
   padding: 1em;
   z-index: 10;
   color: var(--sidebar-text);
+}
+
+.toc h3,
+.toc h4,
+.toc summary,
+.toc a {
+  color: var(--sidebar-text);
+}
+
+.toc a:hover,
+.toc a:focus {
+  color: var(--link-active-color);
+  text-decoration: underline;
 }
 
 .toc-tree details {
@@ -41,7 +56,6 @@ body {
 .toc-tree summary {
   font-weight: bold;
   cursor: pointer;
-  color: var(--sidebar-text);
 }
 
 .toc-tree ul {
@@ -75,6 +89,7 @@ body {
 .content {
   flex: 1;
   overflow-y: auto;
+  height: 100vh;
   padding: 2em;
 }
 
@@ -108,7 +123,6 @@ body {
   transition: background-color 0.3s, color 0.3s;
 }
 
-
 /* Responsive Layout */
 @media (max-width: 768px) {
   .layout {
@@ -123,6 +137,20 @@ body {
   .toc.visible,
   .brython-panel.visible {
     display: block;
+    background-color: var(--sidebar-bg);
+    color: var(--sidebar-text);
+  }
+
+  .toc.visible a,
+  .toc.visible h3,
+  .toc.visible h4,
+  .toc.visible summary {
+    color: var(--sidebar-text);
+  }
+
+  .toc.visible a:hover,
+  .toc.visible a:focus {
+    color: var(--link-active-color);
   }
 
   .mobile-controls {
@@ -187,11 +215,4 @@ body {
   --input-bg: #2c2c2c;
   --input-text: #fff;
   --input-border: #555;
-}
-
-/* Base Theme Application */
-body {
-  background-color: var(--background-color);
-  color: var(--text-color);
-  transition: background-color 0.3s, color 0.3s;
 }
