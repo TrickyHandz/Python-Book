@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>{{ page.title }}</title>
@@ -36,16 +37,23 @@
   </div>
 
   <script>
-    // Ensure Brython initializes after all scripts are ready
-    window.addEventListener("DOMContentLoaded", () => brython());
+  window.addEventListener("DOMContentLoaded", () => brython());
 
-    function toggleTOC() {
-      document.getElementsByClassName('toc').classList.toggle('visible');
+  function toggleTOC() {
+    const toc = document.querySelector('.toc');
+    if (toc) {
+      toc.classList.toggle('visible');
     }
+  }
 
-    function toggleBrython() {
-      document.getElementById('brythonPanel').classList.toggle('visible');
+  function toggleBrython() {
+    const panel = document.getElementById('brythonPanel');
+    if (panel) {
+      panel.classList.toggle('visible');
     }
-  </script>
+  }
+</script>
+
 </body>
+
 </html>
