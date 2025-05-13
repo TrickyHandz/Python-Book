@@ -3,6 +3,7 @@ body {
   font-family: sans-serif;
 }
 
+/* Mobile Controls */
 .mobile-controls {
   display: none;
   background: #f8f8f8;
@@ -13,6 +14,7 @@ body {
   margin-right: 1em;
 }
 
+/* Layout Containers */
 .layout {
   display: flex;
   flex-direction: row;
@@ -25,10 +27,11 @@ body {
   flex: 0 0 250px;
   height: 100vh;
   overflow-y: auto;
-  background: #f0f0f0;
-  border-right: 1px solid #ccc;
+  background: var(--sidebar-bg);
+  border-right: 1px solid var(--input-border);
   padding: 1em;
-  z-index: 10; /* optional but helpful if content scrolls near it */
+  z-index: 10;
+  color: var(--sidebar-text);
 }
 
 .toc-tree details {
@@ -38,11 +41,22 @@ body {
 .toc-tree summary {
   font-weight: bold;
   cursor: pointer;
+  color: var(--sidebar-text);
 }
 
 .toc-tree ul {
   list-style-type: none;
   padding-left: 1em;
+}
+
+.toc-lesson a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+.toc-lesson a.active {
+  color: var(--link-active-color);
+  font-weight: bold;
 }
 
 .toc-search {
@@ -52,9 +66,12 @@ body {
   width: 100%;
   padding: 0.5em;
   font-size: 1em;
-  border: 1px solid #ccc;
+  background-color: var(--input-bg);
+  color: var(--input-text);
+  border: 1px solid var(--input-border);
 }
 
+/* Main Content */
 .content {
   flex: 1;
   overflow-y: auto;
@@ -96,33 +113,62 @@ body {
   }
 }
 
-/* Light and dark themes */
+/* Theme Variables - Default */
 :root {
   --background-color: white;
   --text-color: black;
+  --sidebar-bg: #f0f0f0;
+  --sidebar-text: #000;
+  --link-color: #0645ad;
+  --link-active-color: #000;
+  --input-bg: #fff;
+  --input-text: #000;
+  --input-border: #ccc;
 }
 
+/* Theme Variables - Dark via system */
 @media (prefers-color-scheme: dark) {
   :root {
     --background-color: #121212;
     --text-color: #ffffff;
+    --sidebar-bg: #1e1e1e;
+    --sidebar-text: #fff;
+    --link-color: #58a6ff;
+    --link-active-color: #fff;
+    --input-bg: #2c2c2c;
+    --input-text: #fff;
+    --input-border: #555;
   }
 }
 
+/* Theme Overrides */
+.light {
+  --background-color: white;
+  --text-color: black;
+  --sidebar-bg: #f0f0f0;
+  --sidebar-text: #000;
+  --link-color: #0645ad;
+  --link-active-color: #000;
+  --input-bg: #fff;
+  --input-text: #000;
+  --input-border: #ccc;
+}
+
+.dark {
+  --background-color: #121212;
+  --text-color: #ffffff;
+  --sidebar-bg: #1e1e1e;
+  --sidebar-text: #fff;
+  --link-color: #58a6ff;
+  --link-active-color: #fff;
+  --input-bg: #2c2c2c;
+  --input-text: #fff;
+  --input-border: #555;
+}
+
+/* Base Theme Application */
 body {
   background-color: var(--background-color);
   color: var(--text-color);
   transition: background-color 0.3s, color 0.3s;
-}
-
-/* User override: light */
-.light {
-  --background-color: white;
-  --text-color: black;
-}
-
-/* User override: dark */
-.dark {
-  --background-color: #121212;
-  --text-color: #ffffff;
 }
