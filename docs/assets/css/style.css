@@ -152,9 +152,10 @@ body {
     display: none;
   }
 
-  .toc.visible,
-  .brython-panel.visible {
+  .toc.visible {
     display: block;
+    max-height: 50vh;
+    overflow-y: auto;
     background-color: var(--sidebar-bg);
     color: var(--sidebar-text);
   }
@@ -179,6 +180,7 @@ body {
 
   .content {
     padding: 1em;
+    overflow-y: auto;
   }
 }
 
