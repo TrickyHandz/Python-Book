@@ -19,3 +19,9 @@
 .toc a:hover {
   text-decoration: underline;
 }
+
+.toc a.active {
+  font-weight: bold;
+  color: #007acc;
+}
+
