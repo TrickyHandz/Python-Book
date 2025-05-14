@@ -39,3 +39,26 @@ body {
 .footer {
   background-color: #444;
 }
+
+
+/* Add borders for layout clarity */
+.header {
+  border-bottom: 2px solid #ccc;
+}
+
+.footer {
+  border-top: 2px solid #ccc;
+}
+
+.left-sidebar {
+  border-right: 2px solid #ccc;
+}
+
+.right-sidebar {
+  border-left: 2px solid #ccc;
+}
+
+.lesson-content {
+  border-left: 2px solid transparent;
+  border-right: 2px solid transparent;
+}
