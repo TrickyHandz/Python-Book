@@ -1,0 +1,21 @@
+.toc {
+  font-size: 0.9rem;
+}
+
+.toc ul {
+  list-style: none;
+  padding: 0;
+}
+
+.toc li {
+  margin-bottom: 0.5rem;
+}
+
+.toc a {
+  color: black;
+  text-decoration: none;
+}
+
+.toc a:hover {
+  text-decoration: underline;
+}

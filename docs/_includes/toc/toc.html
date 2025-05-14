@@ -1,1 +1,12 @@
-<nav>Table of Contents Placeholder</nav>
+<nav class="toc">
+  <h2>Table of Contents</h2>
+  <ul>
+    {% for lesson in site.data.lessons %}
+      <li>
+        <a href="{{ '/lessons/' | append: lesson.section | append: '/' | append: lesson.file | replace: '.md','/' | relative_url }}">
+          {{ lesson.number }} – {{ lesson.title }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</nav>
