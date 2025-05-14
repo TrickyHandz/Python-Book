@@ -16,3 +16,17 @@
   height: 100px;
   overflow: auto;
 }
+
+.brython-editor pre#output {
+  background: #111;
+  color: #0f0;
+  padding: 1rem;
+  margin-top: 0.5rem;
+  height: 150px;
+  overflow-y: auto;
+  font-family: monospace;
+  font-size: 0.85rem;
+  white-space: pre-wrap;
+  border: 1px solid #333;
+}
+
