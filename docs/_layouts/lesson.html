@@ -3,20 +3,34 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Layout Test</title>
+  <title>{{ page.title }}</title>
 
+  <!-- Base + Layout Style -->
   <link rel="stylesheet" href="{{ '/assets/css/layout.css' | relative_url }}">
 </head>
-
 <body>
-  <header class="header">Header</header>
+
+  <header class="header">
+    {% include header/lesson-header.html %}
+  </header>
 
   <div class="layout-wrapper">
-    <aside class="left-sidebar">TOC</aside>
-    <main class="lesson-content">Lesson Content</main>
-    <aside class="right-sidebar">Brython Editor</aside>
+    <aside class="left-sidebar">
+      {% include toc/toc.html %}
+    </aside>
+
+    <main class="lesson-content">
+      {{ content }}
+    </main>
+
+    <aside class="right-sidebar">
+      {% include brython/editor.html %}
+    </aside>
   </div>
 
-  <footer class="footer">Footer</footer>
+  <footer class="footer">
+    {% include footer/footer.html %}
+  </footer>
+
 </body>
 </html>
