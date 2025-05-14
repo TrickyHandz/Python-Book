@@ -1,1 +1,21 @@
-<div>Brython Editor Placeholder</div>
+<div class="brython-editor">
+    <textarea id="python-code" style="width: 100%; height: 200px;">
+print("Hello from Brython!")
+  </textarea>
+    <button onclick="runPython()">Run Code</button>
+    <pre id="output"></pre>
+
+    <script type="text/python">
+from browser import document
+
+def runPython(event=None):
+    code = document["python-code"].value
+    try:
+        exec(code)
+    except Exception as e:
+        document["output"].text = str(e)
+
+document["output"].text = ""
+document["python-code"].bind("change", runPython)
+  </script>
+</div>

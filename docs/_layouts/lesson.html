@@ -9,10 +9,14 @@
   <link rel="stylesheet" href="{{ '/assets/css/layout.css' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/toc/toc.css' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/header/header.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/brython/editor.css' | relative_url }}">
 
+  <!-- Brython Editor scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/brython@3.11.0/brython.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/brython@3.11.0/brython_stdlib.js"></script>
 
 </head>
-<body>
+<body onload="brython()">
 
   <header class="header">
     {% include header/header.html %}
