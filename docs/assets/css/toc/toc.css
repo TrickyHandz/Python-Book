@@ -1,10 +1,28 @@
 .toc {
   font-size: 0.9rem;
+  padding-right: 1rem;
+  height: 100%; /* make sure it expands fully inside its container */
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.toc h2 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  position: sticky;
+  top: 0;
+  background-color: #f5f5f5;
+  padding-bottom: 0.25rem;
 }
 
 .toc ul {
   list-style: none;
-  padding: 0;
+  padding-left: 0;
+  margin: 0;
+}
+
+.toc ul ul {
+  padding-left: 1rem;
 }
 
 .toc li {
@@ -14,6 +32,7 @@
 .toc a {
   color: black;
   text-decoration: none;
+  display: block;
 }
 
 .toc a:hover {
@@ -24,4 +43,3 @@
   font-weight: bold;
   color: #007acc;
 }
-
