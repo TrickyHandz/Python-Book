@@ -1,59 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <title>{{ page.title }}</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Layout Test</title>
 
-  <!-- Brython -->
-  <script src="https://cdn.jsdelivr.net/npm/brython@3.11.0/brython.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/brython@3.11.0/brython_stdlib.js"></script>
+  <link rel="stylesheet" href="{{ '/assets/css/layout.css' | relative_url }}">
 </head>
 
 <body>
-  <header class="mobile-controls">
-    <button onclick="toggleTOC()">☰ Menu</button>
-    {% if page.show_brython %}
-    <button onclick="toggleBrython()">🧠 Code</button>
-    {% endif %}
-  </header>
+  <header class="header">Header</header>
 
-  <div class="layout">
-    <aside class="toc">
-      {% include lesson-nav.html %}
-    </aside>
-
-    <main class="content">
-      {{ content }}
-    </main>
-
-    {% if page.show_brython %}
-    <aside class="brython-panel" id="brythonPanel">
-      {% include brython/brython_codeblock.html id="interactive" starter=page.brython_starter %}
-    </aside>
-    {% endif %}
+  <div class="layout-wrapper">
+    <aside class="left-sidebar">TOC</aside>
+    <main class="lesson-content">Lesson Content</main>
+    <aside class="right-sidebar">Brython Editor</aside>
   </div>
 
-  <script>
-  window.addEventListener("DOMContentLoaded", () => brython());
-
-  function toggleTOC() {
-    const toc = document.querySelector('.toc');
-    if (toc) {
-      toc.classList.toggle('visible');
-    }
-  }
-
-  function toggleBrython() {
-    const panel = document.getElementById('brythonPanel');
-    if (panel) {
-      panel.classList.toggle('visible');
-    }
-  }
-</script>
-
+  <footer class="footer">Footer</footer>
 </body>
-
 </html>
