@@ -1,0 +1,30 @@
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+}
+
+.footer-content a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.footer-content img {
+  height: 31px;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+}
+
+.github-logo {
+  height: 24px;
+  margin-right: 0.25rem;
+  vertical-align: middle;
+}
+
+.license span {
+  vertical-align: middle;
+}
