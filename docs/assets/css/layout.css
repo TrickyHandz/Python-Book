@@ -4,14 +4,20 @@ body {
   display: flex;
   flex-direction: column;
   height: 100vh;
+  background-color: white;
+  color: black;
+
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .header,
 .footer {
-  background-color: #333;
-  color: white;
   padding: 1rem;
   text-align: center;
+  background-color: #f8f8f8;
+  color: #333;
+
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .layout-wrapper {
@@ -26,6 +32,8 @@ body {
   background-color: #f5f5f5;
   padding: 1rem;
   box-sizing: border-box;
+
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .lesson-content {
@@ -34,14 +42,11 @@ body {
   background-color: #fff;
   box-sizing: border-box;
   overflow-y: auto;
+
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.footer {
-  background-color: #444;
-}
-
-
-/* Add borders for layout clarity */
+/* Borders for layout clarity */
 .header {
   border-bottom: 2px solid #ccc;
 }
@@ -51,14 +56,63 @@ body {
 }
 
 .left-sidebar {
-  border-right: 2px solid #000000;
+  border-right: 2px solid #000;
 }
 
 .right-sidebar {
-  border-left: 2px solid #000000;
+  border-left: 2px solid #000;
 }
 
 .lesson-content {
   border-left: 2px solid transparent;
   border-right: 2px solid transparent;
+}
+
+/* Dark Theme Support */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #121212;
+    color: #e0e0e0;
+  }
+
+  .header {
+    background-color: #222;
+    color: white;
+  }
+
+  .footer {
+    background-color: #111;
+    color: #bbb;
+  }
+
+  .lesson-content {
+    background-color: #1e1e1e;
+    color: #ddd;
+  }
+
+  .left-sidebar,
+  .right-sidebar {
+    background-color: #1a1a1a;
+    color: #ccc;
+  }
+
+  .toc a {
+    color: #ccc;
+  }
+
+  .toc a.active {
+    color: #66d9ef;
+  }
+
+  .brython-editor textarea {
+    background-color: #2a2a2a;
+    color: #eee;
+    border: 1px solid #444;
+  }
+
+  .brython-editor pre#output {
+    background: #111;
+    color: #0f0;
+    border-color: #444;
+  }
 }
