@@ -1,12 +1,13 @@
 <div class="brython-editor">
-    <textarea id="python-code" style="width: 100%; height: 200px;">
+  <textarea id="python-code" style="width: 100%; height: 200px;">
 print("Hello from Brython!")
   </textarea>
-    <button onclick="runPython()">Run Code</button>
-    <pre id="output"></pre>
 
-    <script type="text/python">
-from browser import document
+  <button onclick="window.runPython()">Run Code</button>
+  <pre id="output"></pre>
+
+  <script type="text/python">
+from browser import document, window
 
 def runPython(event=None):
     code = document["python-code"].value
@@ -15,7 +16,7 @@ def runPython(event=None):
     except Exception as e:
         document["output"].text = str(e)
 
-document["output"].text = ""
-document["python-code"].bind("change", runPython)
+# Make the function callable from JS:
+window.runPython = runPython
   </script>
 </div>
