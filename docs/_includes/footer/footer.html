@@ -1,15 +1,39 @@
 <div class="footer-content">
-  <div class="license">
-    <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">
-      <img src="https://licensebuttons.net/l/by/4.0/88x31.png" alt="Creative Commons License" />
-    </a>
-    <span>This work is licensed under a <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0 License</a>.</span>
-  </div>
+    <div class="license">
+        <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">
+            <img src="https://licensebuttons.net/l/by/4.0/88x31.png" alt="Creative Commons License" />
+        </a>
+        <span>This work is licensed under a <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY
+                4.0 License</a>.</span>
+    </div>
 
-  <div class="repo-link">
-    <a href="https://github.com/TrickyHandz/Python-Book" target="_blank" rel="noopener noreferrer">
-      <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo" class="github-logo" />
-      Contribute on GitHub
-    </a>
-  </div>
+    <div class="repo-link">
+        <a href="https://github.com/TrickyHandz/Python-Book" target="_blank" rel="noopener noreferrer">
+            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo"
+                class="github-logo" />
+            Contribute on GitHub
+        </a>
+    </div>
 </div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const tocButton = document.getElementById("toggle-toc");
+        const codeButton = document.getElementById("toggle-code");
+
+        const toc = document.querySelector(".left-sidebar");
+        const code = document.querySelector(".right-sidebar");
+
+        if (tocButton && toc) {
+            tocButton.addEventListener("click", () => {
+                toc.style.display = (toc.style.display === "block") ? "none" : "block";
+            });
+        }
+
+        if (codeButton && code) {
+            codeButton.addEventListener("click", () => {
+                code.style.display = (code.style.display === "block") ? "none" : "block";
+            });
+        }
+    });
+</script>

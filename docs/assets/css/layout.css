@@ -116,3 +116,9 @@ body {
     border-color: #444;
   }
 }
+
+/* CSS Transitions */
+.left-sidebar,
+.right-sidebar {
+  transition: all 0.3s ease;
+}

@@ -1,3 +1,24 @@
+
+.header-controls {
+  display: none;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.header-button {
+  background-color: #007acc;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.header-button:hover {
+  background-color: #005a99;
+}
+
 .lesson-header {
   display: flex;
   justify-content: center;
@@ -17,5 +38,12 @@
 @media (prefers-color-scheme: dark) {
   .section-title {
     color: white;
+  }
+}
+
+/* Show on small screens only */
+@media screen and (max-width: 768px) {
+  .header-controls {
+    display: flex;
   }
 }
