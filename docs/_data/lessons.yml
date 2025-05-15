@@ -108,7 +108,7 @@
 
     - number: "1.0.3"
       title: Debug Zone - Integers
-      file: debug-zone-integers.md
+      file: debugging-integers.md
       section: section-1
       tags: [debugging, int, integers, rubber duck, shotgun]
       summary: Lesson on debugging techniques with examples involving integers.
