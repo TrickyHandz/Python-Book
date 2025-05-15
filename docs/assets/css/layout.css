@@ -117,6 +117,40 @@ body {
   }
 }
 
+/* Small Screen support */
+@media screen and (max-width: 768px) {
+  .layout-wrapper {
+    flex-direction: column;
+  }
+
+  .left-sidebar,
+  .right-sidebar,
+  .lesson-content {
+    width: 100%;
+    order: unset; /* reset any previous order assignments */
+  }
+
+  .left-sidebar {
+    display: none;
+    order: 1;
+  }
+  
+  .lesson-content {
+    border: none;
+    order: 2;
+  }
+
+  .right-sidebar {
+    display: none;
+    order: 3;
+  }
+
+  .footer {
+    order: 4;
+  }
+
+}
+
 /* CSS Transitions */
 .left-sidebar,
 .right-sidebar {
