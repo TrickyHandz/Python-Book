@@ -115,6 +115,19 @@
     summary: "Lesson on Integers \u2013 Math Operations."
 
   - number: 1.0.3
+    title: Debug Zone: Integers
+    file: debugging-integers.md
+    section: section-1
+    tags:
+    - debugging
+    - int
+    - integers
+    - rubber duck
+    - shotgun
+    summary: "Lesson on debugging techniques with examples involving integers."
+
+
+  - number: 1.0.4
     title: Floats
     file: 1-0-3-floats.md
     section: section-1
@@ -124,7 +137,7 @@
     - precision
     summary: Lesson on Floats.
 
-  - number: 1.0.4
+  - number: 1.0.5
     title: "Floats \u2013 Precision and Rounding"
     file: 1-0-4-floats-precision-and-rounding.md
     section: section-1
@@ -134,7 +147,7 @@
     - precision
     summary: "Lesson on Floats \u2013 Precision and Rounding."
 
-  - number: 1.0.5
+  - number: 1.0.6
     title: Booleans
     file: 1-0-5-booleans.md
     section: section-1
@@ -143,7 +156,7 @@
     - logic
     summary: Lesson on Booleans.
 
-  - number: 1.0.6
+  - number: 1.0.7
     title: "Booleans \u2013 Logical Operators"
     file: 1-0-6-booleans-logical-operators.md
     section: section-1
@@ -152,7 +165,7 @@
     - logic
     summary: "Lesson on Booleans \u2013 Logical Operators."
 
-  - number: 1.0.7
+  - number: 1.0.8
     title: Strings
     file: 1-0-7-strings.md
     section: section-1
@@ -160,7 +173,7 @@
     - strings
     summary: Lesson on Strings.
 
-  - number: 1.0.8
+  - number: 1.0.9
     title: "Strings \u2013 Concatenation and Methods"
     file: 1-0-8-strings-concatenation-and-methods.md
     section: section-1
@@ -168,7 +181,7 @@
     - strings
     summary: "Lesson on Strings \u2013 Concatenation and Methods."
 
-  - number: 1.0.9
+  - number: 1.0.10
     title: Lists
     file: 1-0-9-lists.md
     section: section-1
@@ -176,7 +189,7 @@
     - lists
     summary: Lesson on Lists.
 
-  - number: 1.0.10
+  - number: 1.0.11
     title: "Lists \u2013 Indexing and Manipulation"
     file: 1-0-10-lists-indexing-and-manipulation.md
     section: section-1
