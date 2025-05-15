@@ -83,116 +83,88 @@
     - editor
     summary: Lesson on Vscode Editor.
 
-- title: "Lesson 1 \u2013 Core Data Types"
+- title: "Lesson 1 – Core Data Types"
   items:
-    
-  - number: 1.0.0
-    title: Variables And Data Types
-    file: 1-0-0-variables-and-data-types.md
-    section: section-1
-    tags:
-    - variables
-    summary: Lesson on Variables And Data Types.
+    - number: "1.0.0"
+      title: Variables And Data Types
+      file: 1-0-0-variables-and-data-types.md
+      section: section-1
+      tags: [variables]
+      summary: Lesson on Variables And Data Types.
 
-  - number: 1.0.1
-    title: Integers
-    file: 1-0-1-integers.md
-    section: section-1
-    tags:
-    - int
-    - math
-    - numbers
-    summary: Lesson on Integers.
+    - number: "1.0.1"
+      title: Integers
+      file: 1-0-1-integers.md
+      section: section-1
+      tags: [int, math, numbers]
+      summary: Lesson on Integers.
 
-  - number: 1.0.2
-    title: "Integers \u2013 Math Operations"
-    file: 1-0-2-integers-deep.md
-    section: section-1
-    tags:
-    - int
-    - math
-    - numbers
-    summary: "Lesson on Integers \u2013 Math Operations."
+    - number: "1.0.2"
+      title: "Integers – Math Operations"
+      file: 1-0-2-integers-deep.md
+      section: section-1
+      tags: [int, math, numbers]
+      summary: Lesson on Integers – Math Operations.
 
-  - number: 1.0.3
-    title: Debug Zone: Integers
-    file: debugging-integers.md
-    section: section-1
-    tags:
-    - debugging
-    - int
-    - integers
-    - rubber duck
-    - shotgun
-    summary: "Lesson on debugging techniques with examples involving integers."
+    - number: "1.0.3"
+      title: Debug Zone: Integers
+      file: debug-zone-integers.md
+      section: section-1
+      tags: [debugging, int, integers, rubber duck, shotgun]
+      summary: Lesson on debugging techniques with examples involving integers.
 
+    - number: "1.0.4"
+      title: Floats
+      file: 1-0-4-floats.md
+      section: section-1
+      tags: [decimal, float, precision]
+      summary: Lesson on Floats.
 
-  - number: 1.0.4
-    title: Floats
-    file: 1-0-3-floats.md
-    section: section-1
-    tags:
-    - decimal
-    - float
-    - precision
-    summary: Lesson on Floats.
+    - number: "1.0.5"
+      title: "Floats – Precision and Rounding"
+      file: 1-0-5-floats-precision-and-rounding.md
+      section: section-1
+      tags: [decimal, float, precision]
+      summary: Lesson on Floats – Precision and Rounding.
 
-  - number: 1.0.5
-    title: "Floats \u2013 Precision and Rounding"
-    file: 1-0-4-floats-precision-and-rounding.md
-    section: section-1
-    tags:
-    - decimal
-    - float
-    - precision
-    summary: "Lesson on Floats \u2013 Precision and Rounding."
+    - number: "1.0.6"
+      title: Booleans
+      file: 1-0-6-booleans.md
+      section: section-1
+      tags: [bool, logic]
+      summary: Lesson on Booleans.
 
-  - number: 1.0.6
-    title: Booleans
-    file: 1-0-5-booleans.md
-    section: section-1
-    tags:
-    - bool
-    - logic
-    summary: Lesson on Booleans.
+    - number: "1.0.7"
+      title: "Booleans – Logical Operators"
+      file: 1-0-7-booleans-logical-operators.md
+      section: section-1
+      tags: [bool, logic]
+      summary: Lesson on Booleans – Logical Operators.
 
-  - number: 1.0.7
-    title: "Booleans \u2013 Logical Operators"
-    file: 1-0-6-booleans-logical-operators.md
-    section: section-1
-    tags:
-    - bool
-    - logic
-    summary: "Lesson on Booleans \u2013 Logical Operators."
+    - number: "1.0.8"
+      title: Strings
+      file: 1-0-8-strings.md
+      section: section-1
+      tags: [strings]
+      summary: Lesson on Strings.
 
-  - number: 1.0.8
-    title: Strings
-    file: 1-0-7-strings.md
-    section: section-1
-    tags:
-    - strings
-    summary: Lesson on Strings.
+    - number: "1.0.9"
+      title: "Strings – Concatenation and Methods"
+      file: 1-0-9-strings-concatenation-and-methods.md
+      section: section-1
+      tags: [strings]
+      summary: Lesson on Strings – Concatenation and Methods.
 
-  - number: 1.0.9
-    title: "Strings \u2013 Concatenation and Methods"
-    file: 1-0-8-strings-concatenation-and-methods.md
-    section: section-1
-    tags:
-    - strings
-    summary: "Lesson on Strings \u2013 Concatenation and Methods."
+    - number: "1.0.10"
+      title: Lists
+      file: 1-0-10-lists.md
+      section: section-1
+      tags: [lists]
+      summary: Lesson on Lists.
 
-  - number: 1.0.10
-    title: Lists
-    file: 1-0-9-lists.md
-    section: section-1
-    tags:
-    - lists
-    summary: Lesson on Lists.
-
-  - number: 1.0.11
-    title: "Lists \u2013 Indexing and Manipulation"
-    file: 1-0-10-lists-indexing-and-manipulation.md
-    section: section-1
-    tags:
-    - lists
-    summary: "Lesson on Lists \u2013 Indexing and Manipulation."
+    - number: "1.0.11"
+      title: "Lists – Indexing and Manipulation"
+      file: 1-0-11-lists-indexing-and-manipulation.md
+      section: section-1
+      tags: [lists]
+      summary: Lesson on Lists – Indexing and Manipulation.
