@@ -1,3 +1,14 @@
+---
+layout: lesson
+title: "Debug Zone – Integers"
+section: 1
+lesson: 0
+sublesson: 3
+section_title: "Core Data Types"
+permalink: /lessons/section-1/debugging-integers/
+---
+
+
 ## 🐞 Debug Zone – Getting Started with Debugging
 
 When you're working with numbers in Python, it’s easy to run into small mistakes—like trying to divide by zero or forgetting how integer division works. That’s where **debugging** comes in: it’s the process of finding and fixing problems in your code.
