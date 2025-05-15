@@ -71,3 +71,37 @@
     font-weight: bold;
   }
 }
+
+
+@media screen and (max-width: 768px) {
+  .layout-wrapper {
+    flex-direction: column;
+  }
+
+  .left-sidebar,
+  .right-sidebar {
+    width: 100%;
+    order: 1;
+  }
+
+  .lesson-content {
+    order: 2;
+    border-left: none;
+    border-right: none;
+  }
+
+  .left-sidebar,
+  .right-sidebar {
+    display: none; /* Temporarily hide for a clean reading experience */
+  }
+
+  .header,
+  .footer {
+    font-size: 0.95rem;
+    padding: 0.75rem;
+  }
+
+  .section-title {
+    font-size: 1rem;
+  }
+}
