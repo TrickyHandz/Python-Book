@@ -183,7 +183,7 @@
     "tags":
     - "lists"
     "summary": "Lesson on Lists - Indexing and Manipulation."
-      - "number": "1.0.13"
+  - "number": "1.0.13"
     "title": "Debug Zone - Lists"
     "file": "debugging-lists.md"
     "section": "section-1"
