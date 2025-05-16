@@ -183,3 +183,15 @@
     "tags":
     - "lists"
     "summary": "Lesson on Lists - Indexing and Manipulation."
+      - "number": "1.0.13"
+    "title": "Debug Zone - Lists"
+    "file": "debugging-lists.md"
+    "section": "section-1"
+    "tags":
+    - "debugging"
+    - "lists"
+    - "index"
+    - "type"
+    - "errors"
+    "summary": "Walks through common list-related errors using a task list example, and highlights both bad and good debugging practices."
+
