@@ -49,15 +49,14 @@ function runBrython(id) {
 
   // Combine output redirect + user code into one Python script
   const fullCode = `
-from browser import document
+from browser import document, html
 import sys
 
 class OutputCatcher:
     def __init__(self, id):
-        try:
-            self.output = document[f"output{id}"]
-        except KeyError:
-            self.output = None
+        self.output = document.select_one(f"#output{id}")
+        if self.output is None:
+            document <= html.P(f"[Warning] No output area found for ID: output{id}")
     def write(self, data):
         if self.output:
             self.output.textContent += str(data)
