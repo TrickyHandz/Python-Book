@@ -15,23 +15,17 @@ Lists are a powerful tool for storing and organizing data—but they also come w
 
 ### 📋 Setup – A Simple Task List
 
-```python
-tasks = ["buy groceries", "clean kitchen", "walk dog"]
-```
+    tasks = ["buy groceries", "clean kitchen", "walk dog"]
 
 ---
 
 ### ❌ Bug #1 – IndexError
 
-```python
-print("Task 4:", tasks[3])
-```
+    print("Task 4:", tasks[3])
 
 #### Output:
 
-```plaintext
-IndexError: list index out of range
-```
+    IndexError: list index out of range
 
 #### What Happened?  
 You asked for the 4th item, but lists in Python start at 0. The index `3` is out of bounds for a 3-item list.
@@ -43,27 +37,21 @@ You asked for the 4th item, but lists in Python start at 0. The index `3` is out
 
 #### Better Fix:
 
-```python
-if len(tasks) > 3:
-    print("Task 4:", tasks[3])
-else:
-    print("Not enough tasks to show Task 4.")
-```
+    if len(tasks) > 3:
+        print("Task 4:", tasks[3])
+    else:
+        print("Not enough tasks to show Task 4.")
 
 ---
 
 ### ❌ Bug #2 – TypeError from Misuse of append()
 
-```python
-tasks = tasks.append("do laundry")
-print("Tasks:", tasks)
-```
+    tasks = tasks.append("do laundry")
+    print("Tasks:", tasks)
 
 #### Output:
 
-```plaintext
-Tasks: None
-```
+    Tasks: None
 
 #### What Happened?  
 `.append()` modifies the list in place and returns `None`. Assigning it back to `tasks` overwrites your list!
@@ -75,10 +63,8 @@ Tasks: None
 
 #### Better Fix:
 
-```python
-tasks.append("do laundry")
-print("Tasks:", tasks)
-```
+    tasks.append("do laundry")
+    print("Tasks:", tasks)
 
 ---
 
