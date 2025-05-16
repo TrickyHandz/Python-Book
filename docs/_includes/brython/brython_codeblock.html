@@ -54,9 +54,13 @@ import sys
 
 class OutputCatcher:
     def __init__(self, id):
-        self.output = document[f"output${id}"]
+        try:
+            self.output = document[f"output{id}"]
+        except KeyError:
+            self.output = None
     def write(self, data):
-        self.output.text += str(data)
+        if self.output:
+            self.output.textContent += str(data)
     def flush(self): pass
 
 sys.stdout = OutputCatcher("${id}")
